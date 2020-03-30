@@ -1,39 +1,39 @@
-const { pipeline } = require('stream');
 const fs = require('fs');
 const path = require('path');
 
-// console.log(process.argv);
-// process.argv.forEach((val, index) => {
-//   console.log(`${index}: ${val}`);
-// });
-// console.log(__dirname);
+const { program } = require('commander');
+const caesar = require('./caesar');
 
-const outputFilePath = path.join(__dirname, process.argv[2]);
-const inputFilePath = path.join(__dirname, process.argv[3]);
-console.log('outputFilePath: ', outputFilePath);
-//
+const parseIntHere = n => parseInt(n, 10);
+
+program
+  .option('-a, --action <type>', 'action')
+  .option('-i, --input <type>', 'input')
+  .option('-o, --output <type>', 'verbosity that can be increased')
+  .option('-s, --shift <number>', 'repeatable value', parseIntHere);
+
+program.parse(process.argv);
+switch (program.action) {
+  case 'encode':
+    console.log('start code');
+    break;
+  case 'decode':
+    console.log('start decode');
+    break;
+  default:
+    console.error('error');
+}
+
+const inputFilePath = path.join(__dirname, program.input);
+
+const outputFilePath = path.join(__dirname, program.output);
+
 fs.readFile(inputFilePath, 'utf-8', (err, data) => {
   if (err) {
     console.error('err');
   }
-  console.log(data);
-});
-
-const data = new Uint8Array(Buffer.from('Hello Node.js'));
-fs.writeFile(outputFilePath, data, err => {
-  if (err) {
-    console.error('err#2');
-  }
-  console.log('The file has been saved! ', data);
-});
-
-const transform_stream = data1 => data1;
-
-pipeline(
-  inputFilePath, // input file stream or stdin stream
-  transform_stream, // standard Transform stream or https://github.com/rvagg/through2
-  outputFilePath // output file stream or stdout stream
-).then((a, e) => {
-  console.log('a: ', a);
-  console.log('e: ', e);
+  fs.writeFile(outputFilePath, caesar(data), errOutput => {
+    if (errOutput) throw errOutput;
+    console.log('The file has been saved!');
+  });
 });
