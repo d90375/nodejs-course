@@ -1,37 +1,40 @@
 const fs = require('fs');
-const path = require('path');
 const { program } = require('commander');
-const caesar = require('./caesar');
-const parseIntHere = n => parseInt(n, 10);
+const { pipeline } = require('stream');
+const getOption = require('./getOption');
+const Transformer = require('./transformer');
+const chalk = require('chalk');
 
 program
-  .option('-a, --action <type>', 'action')
-  .option('-i, --input <type>', 'input')
-  .option('-o, --output <type>', 'verbosity')
-  .option('-s, --shift <number>', 'repeatable value', parseIntHere);
-program.parse(process.argv);
+  .requiredOption('-a, --action <type>', 'action')
+  .requiredOption('-s, --shift <number>', 'shift')
+  .option('-i, --input <type>', 'input ')
+  .option('-o, --output <type>', 'output', 'output.txt')
+  .parse(process.argv);
 
-let setCaesar;
-switch (program.action) {
-  case 'encode':
-    setCaesar = caesar.encode;
-    break;
-  case 'decode':
-    setCaesar = caesar.decode;
-    break;
-  default:
-    console.error('error decode');
-}
+const result = getOption(program);
 
-const inputFilePath = path.join(__dirname, program.input);
-const outputFilePath = path.join(__dirname, program.output);
+const cipher = async args => {
+  const { action, shift } = args;
+  pipeline(
+    fs.createReadStream('task1/input.txt'),
+    new Transformer({
+      shift,
+      action
+    }),
+    fs.createWriteStream('task1/output.txt'),
+    err => {
+      if (err) {
+        console.error(
+          chalk.white.bgRed.bold('\nerror: ') +
+            chalk.red('incorrect pipeline\n')
+        );
+        console.log(err);
+      } else {
+        console.info(chalk.white.bgGreenBright.bold('Pipelined!'));
+      }
+    }
+  );
+};
 
-fs.readFile(inputFilePath, 'utf-8', (inputError, data) => {
-  if (inputError) {
-    console.error(`error ${inputError} readFile`);
-  }
-  fs.writeFile(outputFilePath, setCaesar(data, program.shift), err => {
-    if (err) throw err;
-    console.log('File saved');
-  });
-});
+cipher(result);
