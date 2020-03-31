@@ -30,8 +30,7 @@ const cipher = async args => {
       exit(1);
     }
     console.log(
-      chalk.white.bgRed.bold('\nerror: ') +
-        chalk.red("Input file doesn't exist or incorrect ") +
+      chalk.red("Input file doesn't exist or incorrect ") +
         chalk.white.bgGreenBright.bold(' try 2 write text (cmd) ') +
         chalk.white.bgBlueBright.bold(' if u need exit press ctrl + c \n')
     );
