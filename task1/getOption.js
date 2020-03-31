@@ -1,5 +1,7 @@
 const chalk = require('chalk');
+
 const ALPHABET = 26;
+const exit = process.exit;
 
 const getOption = program => {
   const option = {};
@@ -10,20 +12,23 @@ const getOption = program => {
       break;
     default:
       console.error(
-        chalk.white.bgRed.bold('\n error:  ') +
-          chalk.red('incorrect action input')
+        chalk.white.bgRed.bold('\n error: ') +
+          chalk.red('incorrect action input add -a / -action attribute ') +
+          chalk.white.bgGreenBright.bold(' For more info see README.MD ')
       );
+      exit(1);
   }
   option.action = program.action;
 
-  if (isNaN(program.shift)) {
+  option.shift = parseInt(program.shift, 10);
+  if (isNaN(option.shift) || option.shift <= 0) {
     console.error(
       chalk.white.bgRed.bold('\n error:  ') + chalk.red('incorrect shift input')
     );
+    exit(1);
   }
 
   program.shift = program.shift % ALPHABET;
-  option.shift = parseInt(program.shift, 10);
 
   option.input = program.input ? program.input : false;
   option.output = program.output ? program.output : false;
