@@ -9,7 +9,7 @@
   "description": "REST service starter for RS School",
   "main": "src/server.js",
   "scripts": {
-    "dev" : "nodemon task2/index.js",
+    "dev": "nodemon task2/index.js",
     "start": "nodemon src/server.js",
     "start2": "nodemon task1/test.js",
     "lint": "eslint ./ --ignore-path .gitignore --fix",
@@ -58,6 +58,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.4",
+    "@types/util.promisify": "^1.0.3",
     "chai": "4.2.0",
     "debug": "4.1.1",
     "dirty-chai": "2.0.1",
