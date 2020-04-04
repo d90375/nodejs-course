@@ -9,8 +9,9 @@
   "description": "REST service starter for RS School",
   "main": "src/server.js",
   "scripts": {
-    "dev": "nodemon task2/index.js",
+    "createdb" : "node src/mock/db.js",
     "start": "nodemon src/server.js",
+    "start3": "nodemon task2/index.js",
     "start2": "nodemon task1/test.js",
     "lint": "eslint ./ --ignore-path .gitignore --fix",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace",
@@ -35,11 +36,6 @@
       "./test/setup.js"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.js": [
       "npm run lint",
@@ -52,6 +48,7 @@
     "cross-env": "6.0.3",
     "dotenv": "8.2.0",
     "express": "4.17.1",
+    "fakerator": "^0.3.1",
     "swagger-ui-express": "4.1.2",
     "uuid": "3.3.3",
     "yamljs": "0.3.0"
@@ -66,7 +63,6 @@
     "eslint-config-prettier": "6.7.0",
     "eslint-plugin-node": "10.0.0",
     "eslint-plugin-prettier": "3.1.1",
-    "husky": "3.1.0",
     "jest": "24.9.0",
     "lint-staged": "9.5.0",
     "nodemon": "2.0.2",
