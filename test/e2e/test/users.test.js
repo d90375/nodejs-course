@@ -5,6 +5,8 @@ const {
   shouldAuthorizationBeTested
 } = require('../utils');
 
+
+
 const TEST_USER_DATA = {
   name: 'TEST_USER',
   login: 'test_user',
@@ -27,6 +29,7 @@ describe('Users suite', () => {
       request = await createAuthorizedRequest(unauthorizedRequest);
     }
   });
+
 
   describe('GET', () => {
     it('should get all users', async () => {

@@ -4,7 +4,6 @@ const path = require('path');
 class UsersService {
   getAllUsers() {
     return new Promise((res, rej) => {
-
       fs.readFile(
         path.join(__dirname, '../../data/', 'userData.json'),
         (err, data) => {
@@ -20,12 +19,12 @@ class UsersService {
   createUser(data) {
     return new Promise((res, rej) => {
       fs.writeFile(
-        '../../data/userData',
+        path.join(__dirname, '../../data/', 'userData.json'),
         JSON.stringify(data),
         (err, response) => {
           if (err) return res(false);
 
-          return res({ message: 'User created.' });
+          return res(data);
         }
       );
     });
@@ -34,12 +33,12 @@ class UsersService {
   updateUser(data) {
     return new Promise((res, rej) => {
       fs.writeFile(
-        '../../data/userData',
+        path.join(__dirname, '../../data/', 'userData.json'),
         JSON.stringify(data),
         (err, response) => {
           if (err) return res(false);
 
-          return res({ message: 'User updated.' });
+          return res(data);
         }
       );
     });
@@ -48,12 +47,12 @@ class UsersService {
   deleteUser(data) {
     return new Promise((res, rej) => {
       fs.writeFile(
-        '../../data/userData',
+        path.join(__dirname, '../../data/', 'userData.json'),
         JSON.stringify(data),
         (err, response) => {
           if (err) return res(false);
 
-          return res({ message: 'User deleted.' });
+          return res(data);
         }
       );
     });
