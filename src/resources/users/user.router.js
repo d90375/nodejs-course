@@ -7,7 +7,7 @@ const UsersService = require('./user.service');
 router.use(async (req, res, next) => {
   const data = await UsersService.getAllUsers();
   if (data) {
-    req.users = data.map(User.toResponse);
+    req.users = data;
     next();
   } else return res.status(500).send({ message: 'Error while getting users' });
 });

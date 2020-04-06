@@ -61,7 +61,7 @@ class UsersController {
       if (currUser) {
         const delList = req.users.filter(user => id !== user.id);
         const result = await UsersService.deleteUser(delList);
-        if (result) return res.status(200).json(result);
+        if (result) return res.status(200).json(User.toResponse(result));
         return res.status(500).send({ message: 'Unable delete user.' });
       }
       return res.status(404).send({ message: 'User not found.' });
