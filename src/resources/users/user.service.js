@@ -4,8 +4,9 @@ const path = require('path');
 class UsersService {
   getAllUsers() {
     return new Promise((res, rej) => {
+
       fs.readFile(
-        path.join(__dirname, '../../data', 'userData.json'),
+        path.join(__dirname, '../../data/', 'userData.json'),
         (err, data) => {
           if (err) {
             return res(false);

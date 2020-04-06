@@ -2,13 +2,16 @@ const UsersService = require('./user.service');
 
 class UsersController {
   async getAllUsers(req, res) {
-    return res.status(200).send({ data: req.users });
+    if (!req.users) {
+      return res.status(404).send({ message: 'Users not found.' });
+    }
+    return res.status(200).json(req.users);
   }
 
   async getUser(req, res) {
     if (req.params.id) {
       if (req.users.hasOwnProperty(req.params.id)) {
-        return res.status(200).send({ data: req.users[req.params.id] });
+        return res.status(200).json(req.users[req.params.id]);
       }
       return res.status(404).send({ message: 'User not found.' });
     } else if (!req.users) {
@@ -17,7 +20,6 @@ class UsersController {
   }
 
   async createUser(req, res) {
-    console.log(req.body.id);
     if (req.body.user && req.body.user.id) {
       if (req.users.hasOwnProperty(req.body.user.id)) {
         return res.status(409).send({ message: 'User already exists.' });
