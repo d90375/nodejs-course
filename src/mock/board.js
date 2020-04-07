@@ -8,7 +8,7 @@ const createBoards = count => {
     .map(board => {
       const id = uuid();
       const title = `Title: ${fakerator.lorem.word()}`;
-      const rndCol = Math.floor(Math.random() * 10 + 1);
+      const rndCol = Math.floor(Math.random() * 10 + 3);
       const columns = Array(rndCol)
         .fill(0)
         .map((col, index) => {

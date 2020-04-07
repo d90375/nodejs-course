@@ -59,11 +59,14 @@ describe('Tasks suite', () => {
         .expect(200)
         .expect('Content-Type', /json/)
         .then(res => {
+          console.log(testBoardId)
+          console.log(res.body.length);
           debug(res.body);
           expect(res.body).to.be.an('array');
           jestExpect(res.body).not.toHaveLength(0);
         });
     });
+
 
     it('should get a task by id', async () => {
       // Setup

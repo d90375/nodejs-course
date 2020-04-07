@@ -1,5 +1,6 @@
 const UsersService = require('./user.service');
 const User = require('./user.model');
+const TaskController = require('../tasks/tasks.controller');
 
 class UsersController {
   async getAllUsers(req, res) {
@@ -56,6 +57,7 @@ class UsersController {
 
   async deleteUser(req, res) {
     const { id } = req.params;
+    await TaskController.setUserNull(id);
     if (id) {
       const currUser = req.users.find(user => id === user.id);
       if (currUser) {
