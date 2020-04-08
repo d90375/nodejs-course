@@ -1,6 +1,6 @@
 const UsersService = require('./user.service');
+const TasksService = require('../tasks/tasks.service');
 const User = require('./user.model');
-const TaskController = require('../tasks/tasks.controller');
 
 class UsersController {
   async getAllUsers(req, res) {
@@ -57,13 +57,18 @@ class UsersController {
 
   async deleteUser(req, res) {
     const { id } = req.params;
-    await TaskController.setUserNull(id);
     if (id) {
       const currUser = req.users.find(user => id === user.id);
       if (currUser) {
+        req.tasks.forEach(task => {
+          if (id === task.userId) {
+            task.userId = null;
+          }
+        });
         const delList = req.users.filter(user => id !== user.id);
+        await TasksService.deleteTask(req.tasks);
         const result = await UsersService.deleteUser(delList);
-        if (result) return res.status(200).json(User.toResponse(result));
+        if (result) return res.status(204).json(User.toResponse(result));
         return res.status(500).send({ message: 'Unable delete user.' });
       }
       return res.status(404).send({ message: 'User not found.' });

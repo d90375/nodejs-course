@@ -1,13 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const User = require('./user.model');
 const UserController = require('./user.controller');
 const UsersService = require('./user.service');
+const TasksService = require('../tasks/tasks.service');
 
 router.use(async (req, res, next) => {
-  const data = await UsersService.getAllUsers();
-  if (data) {
-    req.users = data;
+  const usersData = await UsersService.getAllUsers();
+  const tasksData = await TasksService.getAllTasks();
+  if (usersData && tasksData) {
+    req.users = usersData;
+    req.tasks = tasksData;
     next();
   } else return res.status(500).send({ message: 'Error while getting users' });
 });

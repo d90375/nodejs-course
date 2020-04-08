@@ -6,8 +6,7 @@ const createTasks = (boards, users) => {
   let returnList = [];
   boards.forEach(board => {
     board.columns.forEach(column => {
-      const taskRndCounter = Math.floor(Math.random() * 4 + 2);
-
+      const taskRndCounter = Math.floor(Math.random() * 2 + 1);
       const filledTask = Array(taskRndCounter)
         .fill(0)
         .map((task, index) => {

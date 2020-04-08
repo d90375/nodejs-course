@@ -7,7 +7,7 @@ const { fillGreen, fillRed } = require('../common/chalk');
 
 const exit = process.exit;
 
-const users = createUsers(5);
+const users = createUsers(3);
 
 fs.writeFile(
   path.join(__dirname, '../data', 'userData.json'),
@@ -19,7 +19,7 @@ fs.writeFile(
     exit(1);
   });
 
-const boards = createBoards(5);
+const boards = createBoards(3);
 
 fs.writeFile(
   path.join(__dirname, '../data', 'boardData.json'),

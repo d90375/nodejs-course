@@ -1,7 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const User = require('./user.model');
-
 class UsersService {
   getAllUsers() {
     return new Promise((res) => {

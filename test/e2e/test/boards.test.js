@@ -173,16 +173,18 @@ describe('Boards suite', () => {
       );
 
       const boardTaskIds = boardTaskResponses.map(response => response.body.id);
+      console.log(boardId)
       await Promise.all(
         boardTaskIds.map(async taskId =>
           request
             .get(routes.tasks.getById(boardId, taskId))
             .set('Accept', 'application/json')
-            .expect(200)
             .expect('Content-Type', /json/)
+            .expect(200)
             .then(response => expect(response.body.boardId).to.equal(boardId))
         )
       );
+
       // Test:
       await request
         .delete(routes.boards.delete(boardId))

@@ -4,80 +4,99 @@ const Task = require('./tasks.model');
 class TasksController {
   async getAllTasks(req, res) {
     const { boardId } = req.params;
-    console.log(boardId)
     if (!req.tasks) {
       return res.status(404).send({ message: 'Tasks not found.' });
     }
-    const x = req.tasks
-    const tasks = x.filter(task => task.boardId === boardId);
+    const tasks = req.tasks.filter(task => task.boardId === boardId);
     return res.status(200).json(tasks);
   }
 
-  async setUserNull (id){
-
-    req.tasks.forEach(task => {
-      if (id === task.userId) {
-        task.userId = null;
-      }
-    });
-  }
-
   async getTask(req, res) {
-    const { id } = req.params;
-    if (id) {
-      const currUser = req.tasks.find(user => id === user.id);
-      if (currUser) {
-        return res.status(200).json(currUser);
+    const { taskId, boardId } = req.params;
+    if (boardId && taskId) {
+      const currTask = req.tasks.find(
+        task => taskId === task.id
+      );
+      if (currTask) {
+        return res.status(200).json(currTask);
       }
-      return res.status(404).send({ message: 'User not found.' });
-    } else if (!req.tasks) {
-      return res.status(404).send({ message: 'Users not found.' });
+      return res.status(404).send({ message: 'Tasks not found.' });
     }
   }
 
   async createTask(req, res) {
+    const { boardId } = req.params;
     if (req.body) {
-      const newTask = new Task(req.body);
+      const { title, order, description } = req.body;
+      let { userId, columnId } = req.body;
+      const col = req.tasks.filter(task => columnId === task.columnId);
+      if (col.length <= 0) {
+        columnId = null;
+      }
+      const user = req.users.filter(user => userId === user.id);
+      if (user.length <= 0) {
+        userId = null;
+      }
+
+      const newTask = new Task({
+        title,
+        description,
+        order,
+        userId,
+        boardId,
+        columnId
+      });
       req.tasks.push(newTask);
       const result = await TasksService.createTask(req.tasks);
       if (result) return res.status(200).json(newTask);
-      return res.status(500).send({ message: 'Unable create user.' });
+      return res.status(500).send({ message: 'Unable create task.' });
     }
-    return res.status(400).send({ message: 'Bad request.' });
+    return res.status(404).send({ message: 'Tasks not found.' });
   }
 
   async updateTask(req, res) {
-    const { id } = req.params;
-    if (req.body && id) {
-      const currTask = req.tasks.find(task => id === task.id);
-      if (!currTask) {
-        return res.status(404).send({ message: 'User not found.' });
-      }
-      req.tasks.find(user => {
-        if (id === user.id) {
-          user.name = req.body.name;
-          user.login = req.body.login;
-          user.password = req.body.password;
+    const { boardId, taskId } = req.params;
+    if (req.body && boardId && taskId) {
+      let updatedTask = {};
+      const updatedArray = req.tasks.map(task => {
+        const { id, title, order, description, userId, columnId } = task;
+        if (id === taskId) {
+          updatedTask = {
+            ...updatedTask,
+            id,
+            title: req.body.title ? req.body.title : title,
+            order: req.body.order ? req.body.order : order,
+            description: req.body.description
+              ? req.body.description
+              : description,
+            userId: req.body.userId ? req.body.userId : userId,
+            boardId: req.body.boardId ? req.body.boardId : boardId,
+            columnId: req.body.columnId ? req.body.columnId : columnId
+          };
+          return updatedTask;
         }
+        return task;
       });
-      const result = await TasksService.updateTask(req.tasks);
-      if (result) return res.status(200).json(result);
-      return res.status(500).send({ message: 'Unable update user.' });
+
+      const result = await TasksService.updateTask(updatedArray);
+
+      if (result) return res.status(200).json(updatedTask);
+      return res.status(500).send({ message: 'Unable update task.' });
     }
     return res.status(400).send({ message: 'Bad request.' });
   }
 
   async deleteTask(req, res) {
-    const { id } = req.params;
-    if (id) {
-      const currUser = req.tasks.find(user => id === user.id);
+    const { taskId } = req.params;
+    if (taskId) {
+      const currUser = req.tasks.find(task => taskId === task.id);
       if (currUser) {
-        const delList = req.tasks.filter(user => id !== user.id);
+        const delList = req.tasks.filter(task => taskId !== task.id);
         const result = await TasksService.deleteTask(delList);
         if (result) return res.status(200).json(result);
-        return res.status(500).send({ message: 'Unable delete user.' });
+        return res.status(500).send({ message: 'Unable delete task.' });
       }
-      return res.status(404).send({ message: 'User not found.' });
+      return res.status(404).send({ message: 'Task not found.' });
     }
     return res.status(400).send({ message: 'Bad request.' });
   }

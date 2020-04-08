@@ -36,13 +36,17 @@ describe('Tasks suite', () => {
       .post(routes.boards.create)
       .set('Accept', 'application/json')
       .send(TEST_BOARD_DATA)
-      .then(res => (testBoardId = res.body.id));
+      .then(res => {
+        return testBoardId = res.body.id;
+      });
 
     await request
       .post(routes.tasks.create(testBoardId))
       .set('Accept', 'application/json')
       .send(TEST_TASK_DATA)
-      .then(res => (testTaskId = res.body.id));
+      .then(res => {
+        return testTaskId = res.body.id;
+      });
   });
 
   afterAll(async () => {
@@ -59,14 +63,11 @@ describe('Tasks suite', () => {
         .expect(200)
         .expect('Content-Type', /json/)
         .then(res => {
-          console.log(testBoardId)
-          console.log(res.body.length);
           debug(res.body);
           expect(res.body).to.be.an('array');
           jestExpect(res.body).not.toHaveLength(0);
         });
     });
-
 
     it('should get a task by id', async () => {
       // Setup
