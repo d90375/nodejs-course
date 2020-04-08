@@ -1,4 +1,4 @@
-const TasksService = require('./tasks.service');
+const TasksRepo = require('./task.memory.repository');
 const Task = require('./tasks.model');
 
 class TasksController {
@@ -14,7 +14,10 @@ class TasksController {
   async getTask(req, res) {
     const { taskId, boardId } = req.params;
     if (boardId && taskId) {
-      const currTask = req.tasks.find(task => taskId === task.id);
+      const currTask = req.tasks.find(
+        task => taskId === task.id && boardId === task.boardId
+      );
+      console.log(currTask);
       if (currTask) {
         return res.status(200).json(currTask);
       }
@@ -45,7 +48,7 @@ class TasksController {
         columnId
       });
       req.tasks.push(newTask);
-      const result = await TasksService.createTask(req.tasks);
+      const result = await TasksRepo.createTask(req.tasks);
       if (result) return res.status(200).json(newTask);
       return res.status(500).send({ message: 'Unable create task.' });
     }
@@ -76,7 +79,7 @@ class TasksController {
         return task;
       });
 
-      const result = await TasksService.updateTask(updatedArray);
+      const result = await TasksRepo.updateTask(updatedArray);
 
       if (result) return res.status(200).json(updatedTask);
       return res.status(500).send({ message: 'Unable update task.' });
@@ -90,7 +93,7 @@ class TasksController {
       const currUser = req.tasks.find(task => taskId === task.id);
       if (currUser) {
         const delList = req.tasks.filter(task => taskId !== task.id);
-        const result = await TasksService.deleteTask(delList);
+        const result = await TasksRepo.deleteTask(delList);
         if (result) return res.status(200).json(result);
         return res.status(500).send({ message: 'Unable delete task.' });
       }

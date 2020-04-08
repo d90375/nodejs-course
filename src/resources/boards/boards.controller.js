@@ -1,5 +1,5 @@
-const BoardsService = require('./boards.service');
-const TasksService = require('../tasks/tasks.service');
+const BoardsRepo = require('./board.memory.repository');
+const TasksRepo = require('../tasks/task.memory.repository');
 const Board = require('./boards.model');
 
 class BoardsController {
@@ -27,7 +27,7 @@ class BoardsController {
     if (req.body) {
       const newBoard = new Board(req.body);
       req.boards.push(newBoard);
-      const result = await BoardsService.createBoard(req.boards);
+      const result = await BoardsRepo.createBoard(req.boards);
       if (result) return res.status(200).json(newBoard);
       return res.status(500).send({ message: 'Unable create board.' });
     }
@@ -65,7 +65,7 @@ class BoardsController {
         }
       });
 
-      const result = await BoardsService.updateBoard(req.boards);
+      const result = await BoardsRepo.updateBoard(req.boards);
       if (result) return res.status(200).json(result);
       return res.status(500).send({ message: 'Unable update user.' });
     }
@@ -83,8 +83,8 @@ class BoardsController {
       const currBoard = req.boards.find(board => id === board.id);
       if (currBoard) {
         const newBoards = req.boards.filter(task => id !== task.id);
-        await TasksService.deleteTask(newTasks);
-        const result = await BoardsService.deleteBoard(newBoards);
+        await TasksRepo.deleteTask(newTasks);
+        const result = await BoardsRepo.deleteBoard(newBoards);
         if (result) return res.status(204).json(newBoards);
         return res.status(500).send({ message: 'Unable delete board.' });
       }

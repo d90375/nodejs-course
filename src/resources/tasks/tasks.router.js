@@ -1,13 +1,13 @@
 const router = require('express').Router();
-const TasksService = require('./tasks.service');
 const TasksController = require('./tasks.controller');
-const UsersService = require('../users/user.service');
-const BoardsService = require('../boards/boards.service');
+const TasksRepo = require('./task.memory.repository');
+const UsersRepo = require('../users/user.memory.repository');
+const BoardsRepo = require('../boards/board.memory.repository');
 
 router.use(async (req, res, next) => {
-  const taskData = await TasksService.getAllTasks();
-  const userData = await UsersService.getAllUsers();
-  const boardData = await BoardsService.getAllBoards();
+  const taskData = await TasksRepo.getAllTasks();
+  const userData = await UsersRepo.getAllUsers();
+  const boardData = await BoardsRepo.getAllBoards();
   if (taskData) {
     req.tasks = taskData;
     req.users = userData;
