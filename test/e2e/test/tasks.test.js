@@ -37,7 +37,7 @@ describe('Tasks suite', () => {
       .set('Accept', 'application/json')
       .send(TEST_BOARD_DATA)
       .then(res => {
-        return testBoardId = res.body.id;
+        return (testBoardId = res.body.id);
       });
 
     await request
@@ -45,7 +45,7 @@ describe('Tasks suite', () => {
       .set('Accept', 'application/json')
       .send(TEST_TASK_DATA)
       .then(res => {
-        return testTaskId = res.body.id;
+        return (testTaskId = res.body.id);
       });
   });
 

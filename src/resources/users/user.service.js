@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 class UsersService {
   getAllUsers() {
-    return new Promise((res) => {
+    return new Promise(res => {
       fs.readFile(
         path.join(__dirname, '../../data/', 'userData.json'),
         (err, data) => {
@@ -16,11 +16,11 @@ class UsersService {
   }
 
   createUser(data) {
-    return new Promise((res) => {
+    return new Promise(res => {
       fs.writeFile(
         path.join(__dirname, '../../data/', 'userData.json'),
         JSON.stringify(data),
-        (err) => {
+        err => {
           if (err) return res(false);
 
           return res(data);
@@ -30,11 +30,11 @@ class UsersService {
   }
 
   updateUser(data) {
-    return new Promise((res) => {
+    return new Promise(res => {
       fs.writeFile(
         path.join(__dirname, '../../data/', 'userData.json'),
         JSON.stringify(data),
-        (err) => {
+        err => {
           if (err) return res(false);
 
           return res(data);
@@ -44,11 +44,11 @@ class UsersService {
   }
 
   deleteUser(data) {
-    return new Promise((res) => {
+    return new Promise(res => {
       fs.writeFile(
         path.join(__dirname, '../../data/', 'userData.json'),
         JSON.stringify(data),
-        (err) => {
+        err => {
           if (err) return res(false);
 
           return res(data);

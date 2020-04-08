@@ -75,7 +75,6 @@ class BoardsController {
   async deleteBoard(req, res) {
     const { id } = req.params;
     if (id) {
-
       const newTasks = req.tasks.filter(task => id !== task.boardId);
       // if (!newTasks) {
       //   return res.status(404).send({ message: 'Task not found.' });

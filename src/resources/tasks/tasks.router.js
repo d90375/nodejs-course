@@ -8,7 +8,7 @@ router.use(async (req, res, next) => {
   const taskData = await TasksService.getAllTasks();
   const userData = await UsersService.getAllUsers();
   const boardData = await BoardsService.getAllBoards();
-  if (taskData ) {
+  if (taskData) {
     req.tasks = taskData;
     req.users = userData;
     req.boards = boardData;

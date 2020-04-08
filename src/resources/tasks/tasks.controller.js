@@ -14,9 +14,7 @@ class TasksController {
   async getTask(req, res) {
     const { taskId, boardId } = req.params;
     if (boardId && taskId) {
-      const currTask = req.tasks.find(
-        task => taskId === task.id
-      );
+      const currTask = req.tasks.find(task => taskId === task.id);
       if (currTask) {
         return res.status(200).json(currTask);
       }
@@ -33,7 +31,7 @@ class TasksController {
       if (col.length <= 0) {
         columnId = null;
       }
-      const user = req.users.filter(user => userId === user.id);
+      const user = req.users.filter(el => userId === el.id);
       if (user.length <= 0) {
         userId = null;
       }

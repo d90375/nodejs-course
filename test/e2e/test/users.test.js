@@ -5,8 +5,6 @@ const {
   shouldAuthorizationBeTested
 } = require('../utils');
 
-
-
 const TEST_USER_DATA = {
   name: 'TEST_USER',
   login: 'test_user',
@@ -30,7 +28,6 @@ describe('Users suite', () => {
     }
   });
 
-
   describe('GET', () => {
     it('should get all users', async () => {
       const usersResponse = await request
@@ -46,11 +43,11 @@ describe('Users suite', () => {
 
     it('should get a user by id', async () => {
       // Setup:
-      //Create the user
+      // Create the user
       await request
-          .post(routes.users.create)
-          .set('Accept', 'application/json')
-          .send(TEST_USER_DATA);
+        .post(routes.users.create)
+        .set('Accept', 'application/json')
+        .send(TEST_USER_DATA);
 
       const usersResponse = await request
         .get(routes.users.getAll)
@@ -189,7 +186,6 @@ describe('Users suite', () => {
         )
       );
 
-
       const userTaskIds = userTaskResponses.map(res => res.body.id);
 
       // Test:
@@ -197,7 +193,6 @@ describe('Users suite', () => {
       expect(deleteResponse.status).oneOf([200, 204]);
 
       for (const taskId of userTaskIds) {
-
         const newTaskResponse = await request
           .get(routes.tasks.getById(boardId, taskId))
           .set('Accept', 'application/json')

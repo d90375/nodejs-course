@@ -173,7 +173,7 @@ describe('Boards suite', () => {
       );
 
       const boardTaskIds = boardTaskResponses.map(response => response.body.id);
-      console.log(boardId)
+      console.log(boardId);
       await Promise.all(
         boardTaskIds.map(async taskId =>
           request

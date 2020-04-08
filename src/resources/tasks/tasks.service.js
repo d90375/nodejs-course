@@ -3,7 +3,7 @@ const path = require('path');
 
 class TasksService {
   getAllTasks() {
-    return new Promise((res) => {
+    return new Promise(res => {
       fs.readFile(
         path.join(__dirname, '../../data/', 'taskData.json'),
         (err, data) => {
@@ -16,14 +16,12 @@ class TasksService {
     });
   }
 
-
-
   createTask(data) {
-    return new Promise((res) => {
+    return new Promise(res => {
       fs.writeFile(
         path.join(__dirname, '../../data/', 'taskData.json'),
         JSON.stringify(data),
-        (err) => {
+        err => {
           if (err) return res(false);
 
           return res(data);
@@ -33,11 +31,11 @@ class TasksService {
   }
 
   updateTask(data) {
-    return new Promise((res) => {
+    return new Promise(res => {
       fs.writeFile(
         path.join(__dirname, '../../data/', 'taskData.json'),
         JSON.stringify(data),
-        (err) => {
+        err => {
           if (err) return res(false);
 
           return res(data);
@@ -47,11 +45,11 @@ class TasksService {
   }
 
   deleteTask(data) {
-    return new Promise((res) => {
+    return new Promise(res => {
       fs.writeFile(
         path.join(__dirname, '../../data/', 'taskData.json'),
         JSON.stringify(data),
-        (err) => {
+        err => {
           if (err) return res(false);
 
           return res(data);

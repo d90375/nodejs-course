@@ -25,7 +25,7 @@ const createTasks = (boards, users) => {
           };
           return task;
         });
-     returnList =  returnList.concat(filledTask);
+      returnList = returnList.concat(filledTask);
     });
   });
   return returnList;

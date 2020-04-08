@@ -2,14 +2,14 @@ const uuid = require('uuid');
 
 class Task {
   constructor({
-                id = uuid(),
-                title = 'Title',
-                order = '0',
-                description = 'Description',
-                userId = null,
-                boardId = null,
-                columnId = null
-              } = {}) {
+    id = uuid(),
+    title = 'Title',
+    order = '0',
+    description = 'Description',
+    userId = null,
+    boardId = null,
+    columnId = null
+  } = {}) {
     this.id = id;
     this.title = title;
     this.order = order;
