@@ -191,8 +191,6 @@ describe('Users suite', () => {
       // Test:
       const deleteResponse = await request.delete(routes.users.delete(userId));
       expect(deleteResponse.status).oneOf([200, 204]);
-      console.log(userTaskIds);
-      console.log(boardId);
 
       for (const taskId of userTaskIds) {
         const newTaskResponse = await request
