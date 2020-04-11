@@ -43,18 +43,19 @@ describe('Users suite', () => {
 
     it('should get a user by id', async () => {
       // Setup:
+      let userId;
+
       // Create the user
       await request
         .post(routes.users.create)
         .set('Accept', 'application/json')
-        .send(TEST_USER_DATA);
-
-      const usersResponse = await request
-        .get(routes.users.getAll)
-        .set('Accept', 'application/json')
+        .send(TEST_USER_DATA)
         .expect(200)
-        .expect('Content-Type', /json/);
-      const userId = ((usersResponse.body || [])[0] || {}).id;
+        .expect('Content-Type', /json/)
+        .then(res => {
+          expect(res.body.id).to.be.a('string');
+          userId = res.body.id;
+        });
 
       // Test:
       const userResponse = await request
@@ -185,7 +186,6 @@ describe('Users suite', () => {
             .expect('Content-Type', /json/)
         )
       );
-
       const userTaskIds = userTaskResponses.map(res => res.body.id);
 
       // Test:
@@ -198,6 +198,7 @@ describe('Users suite', () => {
           .set('Accept', 'application/json')
           .expect(200)
           .expect('Content-Type', /json/);
+
         expect(newTaskResponse.body).to.be.instanceOf(Object);
         expect(newTaskResponse.body.userId).to.equal(null);
       }
