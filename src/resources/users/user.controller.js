@@ -19,7 +19,7 @@ class UsersController {
       //   getStatusText(NOT_FOUND)
       // );
     }
-    return res.status(200).json(req.users);
+    return res.status(200).send(req.users);
   }
 
   async getUser(req, res) {
@@ -27,7 +27,7 @@ class UsersController {
     if (id) {
       const currUser = req.users.find(user => id === user.id);
       if (currUser) {
-        return res.status(200).json(User.toResponse(currUser));
+        return res.status(200).send(User.toResponse(currUser));
       }
       // return res.status(404).send({ message: 'User not found.' });
       throw new ValidationError(
@@ -50,7 +50,7 @@ class UsersController {
       const newUser = new User(req.body);
       req.users.push(newUser);
       const result = await UsersRepo.createUser(req.users);
-      if (result) return res.status(200).json(User.toResponse(newUser));
+      if (result) return res.status(200).send(User.toResponse(newUser));
       return res.status(500).send({ message: 'Unable create user.' });
     }
     // return res.status(400).send({ message: 'Bad request.' });
@@ -76,7 +76,7 @@ class UsersController {
         }
       });
       const result = await UsersRepo.updateUser(req.users);
-      if (result) return res.status(200).json(User.toResponse(currUser));
+      if (result) return res.status(200).send(User.toResponse(currUser));
       return res.status(500).send({ message: 'Unable update user.' });
     }
     return res.status(400).send({ message: 'Bad request.' });
@@ -95,7 +95,7 @@ class UsersController {
         const delList = req.users.filter(user => id !== user.id);
         await TasksRepo.deleteTask(req.tasks);
         const result = await UsersRepo.deleteUser(delList);
-        if (result) return res.status(204).json(User.toResponse(result));
+        if (result) return res.status(204).send(User.toResponse(result));
         return res.status(500).send({ message: 'Unable delete user.' });
       }
       return res.status(404).send({ message: 'User not found.' });
