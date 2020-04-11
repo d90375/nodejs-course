@@ -1,20 +1,23 @@
-let users = [];
+const db = require('../../mock/db');
 
 class UsersRepo {
   async getAllUsers() {
-    return users;
+    return db.users;
   }
 
   async createUser(data) {
-    return (users = data);
+    db.users = data;
+    return db.users;
   }
 
   async updateUser(data) {
-    return (users = data);
+    db.users = data;
+    return db.users;
   }
 
   async deleteUser(data) {
-    return (users = data);
+    db.users = data;
+    return db.users;
   }
 }
 

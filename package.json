@@ -9,7 +9,7 @@
   "description": "REST service starter for RS School",
   "main": "src/server.js",
   "scripts": {
-    "createdb": "node src/mock/db.js",
+    "createdb": "node src/mock/createrDB.js",
     "start": "nodemon src/server.js",
     "start3": "nodemon task2/index.js",
     "start2": "nodemon task1/test.js",
@@ -36,11 +36,6 @@
       "./test/setup.js"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.js": [
       "npm run lint",
@@ -55,7 +50,6 @@
     "express": "4.17.1",
     "fakerator": "^0.3.1",
     "http-status-codes": "^1.4.0",
-    "morgan": "^1.10.0",
     "swagger-ui-express": "4.1.2",
     "uuid": "3.3.3",
     "winston": "^3.2.1",

@@ -1,20 +1,20 @@
-let boards = [];
+const db = require('../../mock/db');
 
 class BoardsService {
   async getAllBoards() {
-    return boards;
+    return db.boards;
   }
 
   async createBoard(data) {
-    return (boards = data);
+    return (db.boards = data);
   }
 
   async updateBoard(data) {
-    return (boards = data);
+    return (db.boards = data);
   }
 
   async deleteBoard(data) {
-    return (boards = data);
+    return (db.boards = data);
   }
 }
 

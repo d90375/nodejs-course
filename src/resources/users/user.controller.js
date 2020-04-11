@@ -1,11 +1,23 @@
 const UsersRepo = require('./user.memory.repository');
 const TasksRepo = require('../tasks/task.memory.repository');
 const User = require('./user.model');
+const { ValidationError } = require('../../../src/error/error');
+const {
+  BAD_REQUEST,
+  NOT_FOUND,
+  INTERNAL_SERVER_ERROR,
+  getStatusText
+} = require('http-status-codes');
 
 class UsersController {
   async getAllUsers(req, res) {
     if (!req.users) {
       return res.status(404).send({ message: 'Users not found.' });
+      // throw new ValidationError(
+      //   NOT_FOUND,
+      //   'Users not found.',
+      //   getStatusText(NOT_FOUND)
+      // );
     }
     return res.status(200).json(req.users);
   }
@@ -17,9 +29,19 @@ class UsersController {
       if (currUser) {
         return res.status(200).json(User.toResponse(currUser));
       }
-      return res.status(404).send({ message: 'User not found.' });
+      // return res.status(404).send({ message: 'User not found.' });
+      throw new ValidationError(
+        NOT_FOUND,
+        'User not found.',
+        getStatusText(NOT_FOUND)
+      );
     } else if (!req.users) {
-      return res.status(404).send({ message: 'Users not found.' });
+      // return res.status(404).send({ message: 'Users not found.' });
+      throw new ValidationError(
+        NOT_FOUND,
+        'Users not found.',
+        getStatusText(NOT_FOUND)
+      );
     }
   }
 
@@ -31,7 +53,12 @@ class UsersController {
       if (result) return res.status(200).json(User.toResponse(newUser));
       return res.status(500).send({ message: 'Unable create user.' });
     }
-    return res.status(400).send({ message: 'Bad request.' });
+    // return res.status(400).send({ message: 'Bad request.' });
+    throw new ValidationError(
+      BAD_REQUEST,
+      'Bad request.',
+      getStatusText(BAD_REQUEST)
+    );
   }
 
   async updateUser(req, res) {

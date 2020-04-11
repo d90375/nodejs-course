@@ -1,20 +1,20 @@
-let tasks = [];
+const db = require('../../mock/db');
 
 class TasksRepo {
   async getAllTasks() {
-    return tasks;
+    return db.tasks;
   }
 
   async createTask(data) {
-    return (tasks = data);
+    return (db.tasks = data);
   }
 
   async updateTask(data) {
-    return (tasks = data);
+    return (db.tasks = data);
   }
 
   async deleteTask(data) {
-    return (tasks = data);
+    return (db.tasks = data);
   }
 }
 
