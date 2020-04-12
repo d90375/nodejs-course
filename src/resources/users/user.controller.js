@@ -1,25 +1,25 @@
 const UsersRepo = require('./user.memory.repository');
 const TasksRepo = require('../tasks/task.memory.repository');
 const User = require('./user.model');
-const { ValidationError } = require('../../../src/error/error');
+const { ValidationError } = require('../../helpers/error');
 const {
   BAD_REQUEST,
   NOT_FOUND,
-  INTERNAL_SERVER_ERROR,
   getStatusText
 } = require('http-status-codes');
 
 class UsersController {
   async getAllUsers(req, res) {
     if (!req.users) {
-      return res.status(404).send({ message: 'Users not found.' });
-      // throw new ValidationError(
-      //   NOT_FOUND,
-      //   'Users not found.',
-      //   getStatusText(NOT_FOUND)
-      // );
+      // return res.status(404).send({ message: 'Users not found.' });
+       throw new ValidationError(
+        NOT_FOUND,
+        'Users not found.',
+        getStatusText(NOT_FOUND)
+      );
+
     }
-    return res.status(200).send(req.users);
+     res.status(200).send(req.users);
   }
 
   async getUser(req, res) {
@@ -27,7 +27,7 @@ class UsersController {
     if (id) {
       const currUser = req.users.find(user => id === user.id);
       if (currUser) {
-        return res.status(200).send(User.toResponse(currUser));
+        res.status(200).send(User.toResponse(currUser));
       }
       // return res.status(404).send({ message: 'User not found.' });
       throw new ValidationError(
