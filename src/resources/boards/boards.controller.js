@@ -1,45 +1,61 @@
 const BoardsRepo = require('./board.memory.repository');
 const TasksRepo = require('../tasks/task.memory.repository');
 const Board = require('./boards.model');
+const ErrorHandler = require('../../common/ErrorHandler');
+const {
+  BAD_REQUEST,
+  NOT_FOUND,
+  INTERNAL_SERVER_ERROR,
+  OK,
+  NO_CONTENT,
+  getStatusText
+} = require('http-status-codes');
 
 class BoardsController {
-  async getAllBoards(req, res) {
+  async getAllBoards(req, res,next) {
     if (!req.boards) {
-      return res.status(404).send({ message: 'Boards not found.' });
+      ErrorHandler(req, res, next, NOT_FOUND, 'Boards not found.');
     }
-    return res.status(200).json(req.boards);
+    return res.status(OK).json(req.boards);
   }
 
-  async getBoard(req, res) {
+  async getBoard(req, res,next) {
     const { id } = req.params;
     if (id) {
       const currUser = req.boards.find(user => id === user.id);
       if (currUser) {
-        return res.status(200).json(currUser);
+        return res.status(OK).json(currUser);
       }
-      return res.status(404).send({ message: 'User not found.' });
+      ErrorHandler(req, res, next, NOT_FOUND, 'Board not found.');
+
     } else if (!req.boards) {
-      return res.status(404).send({ message: 'Users not found.' });
+      ErrorHandler(req, res, next, NOT_FOUND, 'Boards not found.');
     }
   }
 
-  async createBoard(req, res) {
+  async createBoard(req, res,next) {
     if (req.body) {
       const newBoard = new Board(req.body);
       req.boards.push(newBoard);
       const result = await BoardsRepo.createBoard(req.boards);
-      if (result) return res.status(200).json(newBoard);
-      return res.status(500).send({ message: 'Unable create board.' });
+      if (result) return res.status(OK).json(newBoard);
+      ErrorHandler(
+        req,
+        res,
+        next,
+        INTERNAL_SERVER_ERROR,
+        'Unable create task.'
+      );
     }
-    return res.status(400).send({ message: 'Bad request.' });
+    ErrorHandler(req, res, next, BAD_REQUEST, getStatusText(BAD_REQUEST));
   }
 
-  async updateBoard(req, res) {
+  async updateBoard(req, res,next) {
     const { id } = req.params;
     if (req.body && id) {
       const currBoard = req.boards.find(board => id === board.id);
       if (!currBoard) {
-        return res.status(404).send({ message: 'Board not found.' });
+        ErrorHandler(req, res, next, NOT_FOUND, 'Board not found.');
       }
 
       const newBoard = {};
@@ -66,31 +82,41 @@ class BoardsController {
       });
 
       const result = await BoardsRepo.updateBoard(req.boards);
-      if (result) return res.status(200).json(result);
-      return res.status(500).send({ message: 'Unable update user.' });
+      if (result) return res.status(OK).json(result);
+      ErrorHandler(
+        req,
+        res,
+        next,
+        INTERNAL_SERVER_ERROR,
+        'Unable update task.'
+      );
     }
-    return res.status(400).send({ message: 'Bad request.' });
+
+    ErrorHandler(req, res, next, BAD_REQUEST, getStatusText(BAD_REQUEST));
   }
 
-  async deleteBoard(req, res) {
+  async deleteBoard(req, res, next) {
     const { id } = req.params;
     if (id) {
       const newTasks = req.tasks.filter(task => id !== task.boardId);
-      // if (!newTasks) {
-      //   return res.status(404).send({ message: 'Task not found.' });
-      // }
 
       const currBoard = req.boards.find(board => id === board.id);
       if (currBoard) {
         const newBoards = req.boards.filter(task => id !== task.id);
         await TasksRepo.deleteTask(newTasks);
         const result = await BoardsRepo.deleteBoard(newBoards);
-        if (result) return res.status(204).json(newBoards);
-        return res.status(500).send({ message: 'Unable delete board.' });
+        if (result) return res.status(NO_CONTENT).json(newBoards);
+        ErrorHandler(
+          req,
+          res,
+          next,
+          INTERNAL_SERVER_ERROR,
+          'Unable delete board.'
+        );
       }
-      return res.status(404).send({ message: 'Board not found.' });
+      ErrorHandler(req, res, next, NOT_FOUND, 'Board not found.');
     }
-    return res.status(400).send({ message: 'Bad request.' });
+    ErrorHandler(req, res, next, BAD_REQUEST, getStatusText(BAD_REQUEST));
   }
 }
 

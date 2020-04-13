@@ -2,6 +2,9 @@ const router = require('express').Router();
 const BoardsRepo = require('./board.memory.repository');
 const BoardsController = require('./boards.controller');
 const TasksRepo = require('../tasks/task.memory.repository');
+const catchError = require('../../common/catchError');
+const ErrorHandler = require('../../common/ErrorHandler');
+const { INTERNAL_SERVER_ERROR, getStatusText } = require('http-status-codes');
 
 router.use(async (req, res, next) => {
   const dataBoard = await BoardsRepo.getAllBoards();
@@ -10,18 +13,26 @@ router.use(async (req, res, next) => {
     req.boards = dataBoard;
     req.tasks = dataTask;
     next();
-  } else return res.status(500).send({ message: 'Error while getting users' });
+  } else {
+    ErrorHandler(
+      req,
+      res,
+      next,
+      INTERNAL_SERVER_ERROR,
+      getStatusText(INTERNAL_SERVER_ERROR)
+    );
+  }
 });
 
 router
   .route('/')
-  .get(BoardsController.getAllBoards)
-  .post(BoardsController.createBoard);
+  .get(catchError(BoardsController.getAllBoards))
+  .post(catchError(BoardsController.createBoard));
 
 router
   .route('/:id')
-  .get(BoardsController.getBoard)
-  .put(BoardsController.updateBoard)
-  .delete(BoardsController.deleteBoard);
+  .get(catchError(BoardsController.getBoard))
+  .put(catchError(BoardsController.updateBoard))
+  .delete(catchError(BoardsController.deleteBoard));
 
 module.exports = router;

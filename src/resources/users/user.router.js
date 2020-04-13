@@ -3,6 +3,9 @@ const router = express.Router();
 const UserController = require('./user.controller');
 const UsersRepo = require('./user.memory.repository');
 const TasksRepo = require('../tasks/task.memory.repository');
+const catchError = require('../../common/catchError');
+const ErrorHandler = require('../../common/ErrorHandler');
+const { INTERNAL_SERVER_ERROR, getStatusText } = require('http-status-codes');
 
 router.use(async (req, res, next) => {
   const usersData = await UsersRepo.getAllUsers();
@@ -11,18 +14,26 @@ router.use(async (req, res, next) => {
     req.users = usersData;
     req.tasks = tasksData;
     next();
-  } else return res.status(500).send({ message: 'Error while getting users' });
+  } else {
+    ErrorHandler(
+      req,
+      res,
+      next,
+      INTERNAL_SERVER_ERROR,
+      getStatusText(INTERNAL_SERVER_ERROR)
+    );
+  }
 });
 
 router
   .route('/')
-  .get(UserController.getAllUsers)
-  .post(UserController.createUser);
+  .get(catchError(UserController.getAllUsers))
+  .post(catchError(UserController.createUser));
 
 router
   .route('/:id')
-  .get(UserController.getUser)
-  .put(UserController.updateUser)
-  .delete(UserController.deleteUser);
+  .get(catchError(UserController.getUser))
+  .put(catchError(UserController.updateUser))
+  .delete(catchError(UserController.deleteUser));
 
 module.exports = router;

@@ -1,17 +1,26 @@
 const TasksRepo = require('./task.memory.repository');
 const Task = require('./tasks.model');
+const ErrorHandler = require('../../common/ErrorHandler');
+const {
+  BAD_REQUEST,
+  NOT_FOUND,
+  INTERNAL_SERVER_ERROR,
+  OK,
+  NO_CONTENT,
+  getStatusText
+} = require('http-status-codes');
 
 class TasksController {
-  async getAllTasks(req, res) {
+  async getAllTasks(req, res, next) {
     const { boardId } = req.params;
     if (!req.tasks) {
-      return res.status(404).send({ message: 'Tasks not found.' });
+      ErrorHandler(req, res, next, NOT_FOUND, 'Tasks not found.');
     }
     const tasks = req.tasks.filter(task => task.boardId === boardId);
-    return res.status(200).json(tasks);
+    return res.status(OK).json(tasks);
   }
 
-  async getTask(req, res) {
+  async getTask(req, res, next) {
     const { taskId, boardId } = req.params;
     if (boardId && taskId) {
       const currTask = req.tasks.find(
@@ -19,13 +28,13 @@ class TasksController {
       );
       console.log(currTask);
       if (currTask) {
-        return res.status(200).json(currTask);
+        return res.status(OK).json(currTask);
       }
-      return res.status(404).send({ message: 'Tasks not found.' });
+      ErrorHandler(req, res, next, NOT_FOUND, 'Tasks not found.');
     }
   }
 
-  async createTask(req, res) {
+  async createTask(req, res, next) {
     const { boardId } = req.params;
     if (req.body) {
       const { title, order, description } = req.body;
@@ -49,13 +58,19 @@ class TasksController {
       });
       req.tasks.push(newTask);
       const result = await TasksRepo.createTask(req.tasks);
-      if (result) return res.status(200).json(newTask);
-      return res.status(500).send({ message: 'Unable create task.' });
+      if (result) return res.status(OK).json(newTask);
+      ErrorHandler(
+        req,
+        res,
+        next,
+        INTERNAL_SERVER_ERROR,
+        'Unable create task.'
+      );
     }
-    return res.status(404).send({ message: 'Tasks not found.' });
+    ErrorHandler(req, res, next, NOT_FOUND, 'Tasks not found.');
   }
 
-  async updateTask(req, res) {
+  async updateTask(req, res, next) {
     const { boardId, taskId } = req.params;
     if (req.body && boardId && taskId) {
       let updatedTask = {};
@@ -81,25 +96,37 @@ class TasksController {
 
       const result = await TasksRepo.updateTask(updatedArray);
 
-      if (result) return res.status(200).json(updatedTask);
-      return res.status(500).send({ message: 'Unable update task.' });
+      if (result) return res.status(OK).json(updatedTask);
+      ErrorHandler(
+        req,
+        res,
+        next,
+        INTERNAL_SERVER_ERROR,
+        'Unable update task.'
+      );
     }
-    return res.status(400).send({ message: 'Bad request.' });
+    ErrorHandler(req, res, next, BAD_REQUEST, getStatusText(BAD_REQUEST));
   }
 
-  async deleteTask(req, res) {
+  async deleteTask(req, res, next) {
     const { taskId } = req.params;
     if (taskId) {
       const currUser = req.tasks.find(task => taskId === task.id);
       if (currUser) {
         const delList = req.tasks.filter(task => taskId !== task.id);
         const result = await TasksRepo.deleteTask(delList);
-        if (result) return res.status(200).json(result);
-        return res.status(500).send({ message: 'Unable delete task.' });
+        if (result) return res.status(NO_CONTENT).json(result);
+        ErrorHandler(
+          req,
+          res,
+          next,
+          INTERNAL_SERVER_ERROR,
+          'Unable delete task.'
+        );
       }
-      return res.status(404).send({ message: 'Task not found.' });
+      ErrorHandler(req, res, next, NOT_FOUND, 'Tasks not found.');
     }
-    return res.status(400).send({ message: 'Bad request.' });
+    ErrorHandler(req, res, next, BAD_REQUEST, getStatusText(BAD_REQUEST));
   }
 }
 

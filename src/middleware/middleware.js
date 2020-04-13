@@ -1,17 +1,21 @@
-const logger = require('../helpers/logger');
+const logger = require('../common/logger');
 const { finished } = require('stream');
 const { fillGreen, fillYellow } = require('../common/chalk');
 
 const middleware = (req, res, next) => {
   const start = Date.now();
-  const { url, method, body, params } = req;
-  logger.info({ url, method, body, params });
+  const { originalUrl, method, query, body, params } = req;
+  logger.info(
+    `request method: ${method}; request URL: ${originalUrl}; query: ${JSON.stringify(
+      query
+    )}; body: ${JSON.stringify(body)}`
+  );
   console.log(
     fillGreen(
-      `===================================================================================\nRequest - Url: ${url} - Method: ${method} - Body: ${JSON.stringify(
+      `===================================================================================\nRequest - Url: ${originalUrl} - Method: ${method} - Body: ${JSON.stringify(
         body
-      )} - Params: ${JSON.stringify(
-        params
+      )} - Params: ${JSON.stringify(params)} - Query: ${JSON.stringify(
+        query
       )}\n===================================================================================`
     )
   );
