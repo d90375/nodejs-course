@@ -1,0 +1,13 @@
+{"message":"Error status code 400 was captured! status text: Bad Request, message: Bad Request","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 was captured! status text: Bad Request, message: Bad Request","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 404 was captured! status text: Not Found, message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 404 was captured! status text: Not Found, message: Board not found.","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 404 was captured! status text: Not Found, message: Tasks not found.","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 404 was captured! status text: Not Found, message: Tasks not found.","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 404 was captured! status text: Not Found, message: Tasks not found.","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 404 was captured! status text: Not Found, message: Tasks not found.","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 404 was captured! status text: Not Found, message: Tasks not found.","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 404 was captured! status text: Not Found, message: Tasks not found.","level":"error","service":"express-d90375-service"}
+{"message":"captured error: UncaughtException!, point in code: (D:\\NODEJS\\src\\server.js:18:9)","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: Error: UnhandledRejection!","level":"error","service":"express-d90375-service"}
+{"message":"captured error: UncaughtException!","level":"error","service":"express-d90375-service"}

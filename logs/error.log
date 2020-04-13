@@ -1,0 +1,13 @@
+error: Error status code 400 was captured! status text: Bad Request, message: Bad Request {"service":"express-d90375-service"}
+error: Error status code 400 was captured! status text: Bad Request, message: Bad Request {"service":"express-d90375-service"}
+error: Error status code 404 was captured! status text: Not Found, message: User not found. {"service":"express-d90375-service"}
+error: Error status code 404 was captured! status text: Not Found, message: Board not found. {"service":"express-d90375-service"}
+error: Error status code 404 was captured! status text: Not Found, message: Tasks not found. {"service":"express-d90375-service"}
+error: Error status code 404 was captured! status text: Not Found, message: Tasks not found. {"service":"express-d90375-service"}
+error: Error status code 404 was captured! status text: Not Found, message: Tasks not found. {"service":"express-d90375-service"}
+error: Error status code 404 was captured! status text: Not Found, message: Tasks not found. {"service":"express-d90375-service"}
+error: Error status code 404 was captured! status text: Not Found, message: Tasks not found. {"service":"express-d90375-service"}
+error: Error status code 404 was captured! status text: Not Found, message: Tasks not found. {"service":"express-d90375-service"}
+error: captured error: UncaughtException!, point in code: (D:\NODEJS\src\server.js:18:9) {"service":"express-d90375-service"}
+error: Unhandled Rejection, reason: Error: UnhandledRejection! {"service":"express-d90375-service"}
+error: captured error: UncaughtException! {"service":"express-d90375-service"}
