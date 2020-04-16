@@ -1,60 +1,22 @@
-const fs = require('fs');
-const path = require('path');
+const UserRepo = require('./user.db.repository');
+
 class UsersService {
-  getAllUsers() {
-    return new Promise(res => {
-      fs.readFile(
-        path.join(__dirname, '../../data/', 'userData.json'),
-        (err, data) => {
-          if (err) {
-            return res(false);
-          }
-          return res(JSON.parse(data));
-        }
-      );
-    });
+  async getAllUsers() {
+    return UserRepo.getAllUsers();
   }
 
-  createUser(data) {
-    return new Promise(res => {
-      fs.writeFile(
-        path.join(__dirname, '../../data/', 'userData.json'),
-        JSON.stringify(data),
-        err => {
-          if (err) return res(false);
-
-          return res(data);
-        }
-      );
-    });
+  async createUser(data) {
+   return await UserRepo.createUser(data);
   }
 
-  updateUser(data) {
-    return new Promise(res => {
-      fs.writeFile(
-        path.join(__dirname, '../../data/', 'userData.json'),
-        JSON.stringify(data),
-        err => {
-          if (err) return res(false);
-
-          return res(data);
-        }
-      );
-    });
+  async updateUser(id, newData) {
+    return await UserRepo.updateUser(id, newData);
   }
 
-  deleteUser(data) {
-    return new Promise(res => {
-      fs.writeFile(
-        path.join(__dirname, '../../data/', 'userData.json'),
-        JSON.stringify(data),
-        err => {
-          if (err) return res(false);
 
-          return res(data);
-        }
-      );
-    });
+
+  async deleteUser(id) {
+    return  await UserRepo.deleteUser(id);
   }
 }
 

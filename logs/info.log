@@ -83,3 +83,303 @@
 {"message":"captured error: UncaughtException!, point in code: (D:\\NODEJS\\src\\server.js:18:9)","level":"error","service":"express-d90375-service"}
 {"message":"Unhandled Rejection, reason: Error: UnhandledRejection!","level":"error","service":"express-d90375-service"}
 {"message":"captured error: UncaughtException!","level":"error","service":"express-d90375-service"}
+{"message":"captured error: Unexpected token o in JSON at position 1","level":"error","service":"express-d90375-service"}
+{"message":"captured error: Unexpected token o in JSON at position 1","level":"error","service":"express-d90375-service"}
+{"message":"captured error: Unexpected token o in JSON at position 1","level":"error","service":"express-d90375-service"}
+{"message":"captured error: Unexpected token o in JSON at position 1","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"captured error: users.queueCb is not a function","level":"error","service":"express-d90375-service"}
+{"message":"captured error: Unexpected token o in JSON at position 1","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: Server Error","level":"error","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: Server Error","level":"error","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: Server Error","level":"error","service":"express-d90375-service"}
+{"message":"captured error: user.save is not a function","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: Cannot create collection test.users - database is in the process of being dropped.","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: Cannot create collection test.users - database is in the process of being dropped.","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"57260bd3-d095-4c5d-b873-06dcc85afe6e\" }","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"57260bd3-d095-4c5d-b873-06dcc85afe6e\" }","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: Cannot create collection test.users - database is in the process of being dropped.","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"c565e73e-8a15-4d7a-b662-25bc0bcad8f6\" }","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"14dc2dca-cd50-4b79-9baa-543a1666c6b2\" }","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"fd8d6786-430f-4290-a5cd-4778de934095\" }","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"309dbe32-31f2-433e-97c2-a0c64d7e1886\" }","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"220326cc-673f-4192-ac57-60ca9ae29bd4\" }","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"9b16dfc0-4565-4998-9932-9d31c2687cb4\" }","level":"error","service":"express-d90375-service"}
+{"message":"captured error: Invalid `path`. Must be either string or array","level":"error","service":"express-d90375-service"}
+{"message":"captured error: Invalid `path`. Must be either string or array","level":"error","service":"express-d90375-service"}
+{"message":"captured error: Invalid `path`. Must be either string or array","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"3a9f7103-9ac2-4ef6-8942-ea93a53acd0d\" }","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongooseError: document must have an _id before saving","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"c3f6c559-5c48-40ad-b98c-6509e8af6fa4\" }","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: Cannot create collection test.users - database is in the process of being dropped.","level":"error","service":"express-d90375-service"}
+{"message":"captured error: user.save is not a function","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"562f7921-9550-4343-a537-733030a6f457\" }","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: Cannot create collection test.users - database is in the process of being dropped.","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: Cannot create collection test.users - database is in the process of being dropped.","level":"error","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"captured error: Invalid `path`. Must be either string or array","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token \" in JSON at position 3","level":"error","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {\"_id\":\"22d9f4ba-7b69-4ce5-aa72-960a34ba08b1\",\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {\"_id\":\"22d9f4ba-7b69-4ce5-aa72-960a34ba08b1\",\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {\"_id\":\"22d9f4ba-7b69-4ce5-aa72-960a34ba08b1\",\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {\"_id\":\"22d9f4ba-7b69-4ce5-aa72-960a34ba08b1\",\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/252e5bec-90b3-4212-9e98-cadadffa71a6; query: {}; body: {\"_id\":\"22d9f4ba-7b69-4ce5-aa72-960a34ba08b1\",\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/252e5bec-90b3-4212-9e98-cadadffa71a6; query: {}; body: {\"_id\":\"22d9f4ba-7b69-4ce5-aa72-960a34ba08b1\",\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/252e5bec-90b3-4212-9e98-cadadffa71a6; query: {}; body: {\"_id\":\"22d9f4ba-7b69-4ce5-aa72-960a34ba08b1\",\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"_id\":\"22d9f4ba-7b69-4ce5-aa72-960a34ba08b1\",\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: Unable create user.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: Unable create user.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"be3d6ec2-8c3a-402d-9287-7763b2841177\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"be3d6ec2-8c3a-402d-9287-7763b2841177\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/undefined; query: {}; body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"be3d6ec2-8c3a-402d-9287-7763b2841177\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/undefined; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"be3d6ec2-8c3a-402d-9287-7763b2841177\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"be3d6ec2-8c3a-402d-9287-7763b2841177\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"252e5bec-90b3-4212-9e98-cadadffa71a6\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"967d57b6-93ae-4c95-a9d3-336bf6096ddc\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"967d57b6-93ae-4c95-a9d3-336bf6096ddc\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/undefined; query: {}; body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"967d57b6-93ae-4c95-a9d3-336bf6096ddc\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/undefined; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"967d57b6-93ae-4c95-a9d3-336bf6096ddc\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"967d57b6-93ae-4c95-a9d3-336bf6096ddc\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"name\":\"string\",\"login\":\"string\",\"password\":\"riwe!\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"83e4b282-492d-4f77-bc7c-b9a08d15903d\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"83e4b282-492d-4f77-bc7c-b9a08d15903d\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"83e4b282-492d-4f77-bc7c-b9a08d15903d\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/undefined; query: {}; body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"83e4b282-492d-4f77-bc7c-b9a08d15903d\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/undefined; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"83e4b282-492d-4f77-bc7c-b9a08d15903d\" }","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected token ' in JSON at position 8","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"83e4b282-492d-4f77-bc7c-b9a08d15903d\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"2ec0f50c-a92e-495c-ba63-28b1c9fa8b0f\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"2ec0f50c-a92e-495c-ba63-28b1c9fa8b0f\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"2ec0f50c-a92e-495c-ba63-28b1c9fa8b0f\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/undefined; query: {}; body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"2ec0f50c-a92e-495c-ba63-28b1c9fa8b0f\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/undefined; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"2ec0f50c-a92e-495c-ba63-28b1c9fa8b0f\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"01c0d847-8925-414c-8d04-5ae44150e58f\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"name\":\"TEST_USER1\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"01c0d847-8925-414c-8d04-5ae44150e58f\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users/; query: {}; body: {\"name\":\"TEST_USER1\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"d90b5119-66d0-4482-ad50-12d69c957818\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"d90b5119-66d0-4482-ad50-12d69c957818\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"d90b5119-66d0-4482-ad50-12d69c957818\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/undefined; query: {}; body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"d90b5119-66d0-4482-ad50-12d69c957818\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/undefined; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"d90b5119-66d0-4482-ad50-12d69c957818\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/502df3a1-b0b3-4dc6-98d1-ca1c59dd8f33; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/502df3a1-b0b3-4dc6-98d1-ca1c59dd8f33; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"502df3a1-b0b3-4dc6-98d1-ca1c59dd8f33\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"502df3a1-b0b3-4dc6-98d1-ca1c59dd8f33\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/undefined; query: {}; body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"502df3a1-b0b3-4dc6-98d1-ca1c59dd8f33\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/undefined; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"502df3a1-b0b3-4dc6-98d1-ca1c59dd8f33\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/d90b5119-66d0-4482-ad50-12d69c957818; query: {}; body: {\"name\":\"haha\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/d90b5119-66d0-4482-ad50-12d69c957818; query: {}; body: {\"name\":\"haha\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/d90b5119-66d0-4482-ad50-12d69c957818; query: {}; body: {\"name\":\"haha\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/d90b5119-66d0-4482-ad50-12d69c957818; query: {}; body: {\"name\":\"haha\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/d90b5119-66d0-4482-ad50-12d69c957818; query: {}; body: {\"name\":\"haha\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/d90b5119-66d0-4482-ad50-12d69c957818; query: {}; body: {\"name\":\"haha\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/d90b5119-66d0-4482-ad50-12d69c957818; query: {}; body: {\"name\":\"haha\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/01c0d847-8925-414c-8d04-5ae44150e58f; query: {}; body: {\"name\":\"haha\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/01c0d847-8925-414c-8d04-5ae44150e58f; query: {}; body: {\"name\":\"haha\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/01c0d847-8925-414c-8d04-5ae44150e58f; query: {}; body: {\"name\":\"haha\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/01c0d847-8925-414c-8d04-5ae44150e58f; query: {}; body: {\"name\":\"haha\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/01c0d847-8925-414c-8d04-5ae44150e58f; query: {}; body: {\"name\":\"haha\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected string in JSON at position 30","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected string in JSON at position 57","level":"error","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: Unexpected string in JSON at position 57","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/01c0d847-8925-414c-8d04-5ae44150e58f; query: {}; body: {\"id\":\"01c0d847-8925-414c-8d04-5ae44150e58f\",\"name\":\"haha\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/8872e628-4981-4379-9cfe-2aafc74b16ff; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/8872e628-4981-4379-9cfe-2aafc74b16ff; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"8872e628-4981-4379-9cfe-2aafc74b16ff\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"8872e628-4981-4379-9cfe-2aafc74b16ff\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/undefined; query: {}; body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"8872e628-4981-4379-9cfe-2aafc74b16ff\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/undefined; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"8872e628-4981-4379-9cfe-2aafc74b16ff\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/bea29b4a-63d8-46ca-af21-1617b7d390f5; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/bea29b4a-63d8-46ca-af21-1617b7d390f5; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"bea29b4a-63d8-46ca-af21-1617b7d390f5\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"bea29b4a-63d8-46ca-af21-1617b7d390f5\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/undefined; query: {}; body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"bea29b4a-63d8-46ca-af21-1617b7d390f5\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/undefined; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"bea29b4a-63d8-46ca-af21-1617b7d390f5\" }","level":"error","service":"express-d90375-service"}
+{"message":"Unhandled Rejection, reason: MongoError: Cannot create collection test.users - database is in the process of being dropped.","level":"error","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/7a24d7ea-1d1d-4c99-981f-aa5697acbf6f; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/7a24d7ea-1d1d-4c99-981f-aa5697acbf6f; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"7a24d7ea-1d1d-4c99-981f-aa5697acbf6f\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"7a24d7ea-1d1d-4c99-981f-aa5697acbf6f\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/undefined; query: {}; body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"7a24d7ea-1d1d-4c99-981f-aa5697acbf6f\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/undefined; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 500 - Status text: Server Error - Message: E11000 duplicate key error collection: test.users index: _id_ dup key: { _id: \"7a24d7ea-1d1d-4c99-981f-aa5697acbf6f\" }","level":"error","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/01c0d847-8925-414c-8d04-5ae44150e58f; query: {}; body: {\"id\":\"01c0d847-8925-414c-8d04-5ae44150e58f\",\"name\":\"haha\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 404 - Status text: Not Found - Message: User not found.","level":"error","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/16ae52b2-8944-4032-bde0-f91d2d90415e; query: {}; body: {\"id\":\"01c0d847-8925-414c-8d04-5ae44150e58f\",\"name\":\"haha\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/a16e378c-3547-47d4-b1db-0b45b6a1ccbd; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/a16e378c-3547-47d4-b1db-0b45b6a1ccbd; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/a16e378c-3547-47d4-b1db-0b45b6a1ccbd; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/a16e378c-3547-47d4-b1db-0b45b6a1ccbd; query: {}; body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\",\"id\":\"a16e378c-3547-47d4-b1db-0b45b6a1ccbd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/a16e378c-3547-47d4-b1db-0b45b6a1ccbd; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/a16e378c-3547-47d4-b1db-0b45b6a1ccbd; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/a16e378c-3547-47d4-b1db-0b45b6a1ccbd; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /boards; query: {}; body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /boards/072916fd-7bb4-4a06-89d5-67ee0eafc8b8/tasks; query: {}; body: {\"title\":\"Task #2\",\"order\":2,\"description\":\"Lorem ipsum\",\"userId\":\"a16e378c-3547-47d4-b1db-0b45b6a1ccbd\",\"boardId\":\"072916fd-7bb4-4a06-89d5-67ee0eafc8b8\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /boards/072916fd-7bb4-4a06-89d5-67ee0eafc8b8/tasks; query: {}; body: {\"title\":\"Task #1\",\"order\":1,\"description\":\"Lorem ipsum\",\"userId\":\"a16e378c-3547-47d4-b1db-0b45b6a1ccbd\",\"boardId\":\"072916fd-7bb4-4a06-89d5-67ee0eafc8b8\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/54efc717-20d8-40cb-8cd3-e2a328d5ebbc; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/54efc717-20d8-40cb-8cd3-e2a328d5ebbc; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/54efc717-20d8-40cb-8cd3-e2a328d5ebbc; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: PUT; request URL: /users/54efc717-20d8-40cb-8cd3-e2a328d5ebbc; query: {}; body: {\"name\":\"Autotest updated TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\",\"id\":\"54efc717-20d8-40cb-8cd3-e2a328d5ebbc\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: GET; request URL: /users/54efc717-20d8-40cb-8cd3-e2a328d5ebbc; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/54efc717-20d8-40cb-8cd3-e2a328d5ebbc; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: DELETE; request URL: /users/54efc717-20d8-40cb-8cd3-e2a328d5ebbc; query: {}; body: {}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /users; query: {}; body: {\"name\":\"TEST_USER\",\"login\":\"test_user\",\"password\":\"T35t_P@55w0rd\"}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /boards; query: {}; body: {\"title\":\"Autotest board\",\"columns\":[{\"title\":\"Backlog\",\"order\":1},{\"title\":\"Sprint\",\"order\":2}]}","level":"info","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /boards/44d27646-c6fc-4155-8f54-f07bf5743489/tasks; query: {}; body: {\"title\":\"Task #2\",\"order\":2,\"description\":\"Lorem ipsum\",\"userId\":\"54efc717-20d8-40cb-8cd3-e2a328d5ebbc\",\"boardId\":\"44d27646-c6fc-4155-8f54-f07bf5743489\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}
+{"message":"request method: POST; request URL: /boards/44d27646-c6fc-4155-8f54-f07bf5743489/tasks; query: {}; body: {\"title\":\"Task #1\",\"order\":1,\"description\":\"Lorem ipsum\",\"userId\":\"54efc717-20d8-40cb-8cd3-e2a328d5ebbc\",\"boardId\":\"44d27646-c6fc-4155-8f54-f07bf5743489\"}","level":"info","service":"express-d90375-service"}
+{"message":"Error status code 400 - Status text: Bad Request - Message: ","level":"error","service":"express-d90375-service"}

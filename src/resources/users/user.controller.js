@@ -1,5 +1,6 @@
-const UsersRepo = require('./user.memory.repository');
-const TasksRepo = require('../tasks/task.memory.repository');
+const UsersRepo = require('./user.db.repository');
+const UserService = require('./user.service');
+// const TasksRepo = require('../tasks/task.memory.repository');
 const User = require('./user.model');
 const ErrorHandler = require('../../common/ErrorHandler');
 const {
@@ -34,10 +35,8 @@ class UsersController {
 
   async createUser(req, res, next) {
     if (req.body.constructor === Object && Object.keys(req.body).length !== 0) {
-      const newUser = new User(req.body);
-      req.users.push(newUser);
-      const result = await UsersRepo.createUser(req.users);
-      if (result) return res.status(OK).json(User.toResponse(newUser));
+      const result = await UserService.createUser(req.body);
+      if (result) return res.status(OK).json(User.toResponse(result));
       ErrorHandler(
         req,
         res,
@@ -56,15 +55,9 @@ class UsersController {
       if (!currUser) {
         ErrorHandler(req, res, next, NOT_FOUND, 'User not found.');
       }
-      req.users.find(user => {
-        if (id === user.id) {
-          user.name = req.body.name;
-          user.login = req.body.login;
-          user.password = req.body.password;
-        }
-      });
-      const result = await UsersRepo.updateUser(req.users);
-      if (result) return res.status(OK).json(User.toResponse(currUser));
+      const userToUpdate = { ...req.body, id: id };
+      const result = await UserService.updateUser(userToUpdate);
+      if (result) return res.status(OK).json(User.toResponse(result));
       ErrorHandler(
         req,
         res,
@@ -76,19 +69,18 @@ class UsersController {
     ErrorHandler(req, res, next, BAD_REQUEST, getStatusText(BAD_REQUEST));
   }
 
-  async deleteUser(req, res,next) {
+  async deleteUser(req, res, next) {
     const { id } = req.params;
     if (id) {
       const currUser = req.users.find(user => id === user.id);
       if (currUser) {
-        req.tasks.forEach(task => {
-          if (id === task.userId) {
-            task.userId = null;
-          }
-        });
-        const delList = req.users.filter(user => id !== user.id);
-        await TasksRepo.deleteTask(req.tasks);
-        const result = await UsersRepo.deleteUser(delList);
+        // req.tasks.forEach(task => {
+        //   if (id === task.userId) {
+        //     task.userId = null;
+        //   }
+        // });
+        // await TasksRepo.deleteTask(req.tasks);
+        const result = await UserService.deleteUser(id);
         if (result) return res.status(NO_CONTENT).json(User.toResponse(result));
         ErrorHandler(
           req,

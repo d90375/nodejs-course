@@ -1,18 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const UserController = require('./user.controller');
-const UsersRepo = require('./user.memory.repository');
-const TasksRepo = require('../tasks/task.memory.repository');
+const UserService = require('./user.service');
+// const TasksRepo = require('../tasks/task.memory.repository');
 const catchError = require('../../common/catchError');
 const ErrorHandler = require('../../common/ErrorHandler');
 const { INTERNAL_SERVER_ERROR, getStatusText } = require('http-status-codes');
 
 router.use(async (req, res, next) => {
-  const usersData = await UsersRepo.getAllUsers();
-  const tasksData = await TasksRepo.getAllTasks();
-  if (usersData && tasksData) {
+  const usersData = await UserService.getAllUsers();
+  // const tasksData = await TasksRepo.getAllTasks();
+  if (usersData) {
     req.users = usersData;
-    req.tasks = tasksData;
+    // req.tasks = tasksData;
     next();
   } else {
     ErrorHandler(
