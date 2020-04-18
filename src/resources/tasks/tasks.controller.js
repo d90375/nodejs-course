@@ -1,4 +1,4 @@
-const TasksRepo = require('./task.memory.repository');
+const TasksService = require('./tasks.service');
 const Task = require('./tasks.model');
 const ErrorHandler = require('../../common/ErrorHandler');
 const {
@@ -12,12 +12,13 @@ const {
 
 class TasksController {
   async getAllTasks(req, res, next) {
+    console.log(req.params.boardId)
     const { boardId } = req.params;
+    console.log(boardId)
     if (!req.tasks) {
       ErrorHandler(req, res, next, NOT_FOUND, 'Tasks not found.');
     }
-    const tasks = req.tasks.filter(task => task.boardId === boardId);
-    return res.status(OK).json(tasks);
+    return res.status(OK).json(req.tasks.map(Task.toResponse));
   }
 
   async getTask(req, res, next) {

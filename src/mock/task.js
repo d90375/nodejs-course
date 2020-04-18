@@ -19,7 +19,7 @@ const createTasks = (boards, users) => {
             title,
             order: index,
             description,
-            userId: users[randUserIndex].id,
+            userId: users[randUserIndex]._id,
             boardId: board.id,
             columnId: column.id
           };

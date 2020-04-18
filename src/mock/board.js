@@ -12,8 +12,7 @@ const createBoards = count => {
       const columns = Array(rndCol)
         .fill(0)
         .map((col, index) => {
-          col = {
-            id: uuid(),
+          col = { id: uuid(),
             title: `Title: ${fakerator.lorem.word()}`,
             order: index
           };

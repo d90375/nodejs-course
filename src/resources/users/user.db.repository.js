@@ -2,7 +2,7 @@ const User = require('./user.model');
 
 class UsersRepo {
   async getAllUsers() {
-    return User.find().exec();
+    return await User.find().exec();
   }
 
   async createUser(data) {

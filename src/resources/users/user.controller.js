@@ -50,7 +50,7 @@ class UsersController {
 
   async updateUser(req, res, next) {
     const { id } = req.params;
-    if (req.body && id) {
+    if (req.body.constructor === Object && Object.keys(req.body).length !== 0 && id) {
       const currUser = req.users.find(user => id === user.id);
       if (!currUser) {
         ErrorHandler(req, res, next, NOT_FOUND, 'User not found.');

@@ -7,8 +7,10 @@ module.exports = controller => async (req, res, next) => {
     if (error instanceof TypeError) {
       const err = new Error();
       err.status = BAD_REQUEST;
+      console.log('controller error');
       return next(err);
     }
     return next(error);
   }
 };
+

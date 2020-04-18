@@ -1,19 +1,21 @@
 const router = require('express').Router();
 const TasksController = require('./tasks.controller');
-const TasksRepo = require('./task.memory.repository');
-// const UsersRepo = require('../users/user.memory.repository');
-const BoardsRepo = require('../boards/board.memory.repository');
+const TasksService = require('./tasks.service');
+const UsersService = require('../users/user.service');
+const BoardsService = require('../boards/boards.service');
 const catchError = require('../../common/catchError');
 const ErrorHandler = require('../../common/ErrorHandler');
 const { INTERNAL_SERVER_ERROR, getStatusText } = require('http-status-codes');
 
 router.use(async (req, res, next) => {
-  const taskData = await TasksRepo.getAllTasks();
-  // const userData = await UsersRepo.getAllUsers();
-  const boardData = await BoardsRepo.getAllBoards();
-  if (taskData  && boardData) {
+  const { boardId } = req.params;
+  console.log(req)
+  const taskData = await TasksService.getAllTasks(boardId);
+  const userData = await UsersService.getAllUsers();
+  const boardData = await BoardsService.getAllBoards();
+  if (taskData && userData && boardData) {
     req.tasks = taskData;
-    // req.users = userData;
+    req.users = userData;
     req.boards = boardData;
     next();
   } else {
@@ -28,12 +30,12 @@ router.use(async (req, res, next) => {
 });
 
 router
-  .route('/:boardId/tasks')
+  .route('/')
   .get(catchError(TasksController.getAllTasks))
   .post(catchError(TasksController.createTask));
 
 router
-  .route('/:boardId/tasks/:taskId')
+  .route('/:taskId')
   .get(catchError(TasksController.getTask))
   .put(catchError(TasksController.updateTask))
   .delete(catchError(TasksController.deleteTask));

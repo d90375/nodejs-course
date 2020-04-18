@@ -1,61 +1,20 @@
-const fs = require('fs');
-const path = require('path');
+const TasksRepo = require('./tasks.db.repository');
 
 class TasksService {
-  getAllTasks() {
-    return new Promise(res => {
-      fs.readFile(
-        path.join(__dirname, '../../data/', 'taskData.json'),
-        (err, data) => {
-          if (err) {
-            return res(false);
-          }
-          return res(JSON.parse(data));
-        }
-      );
-    });
+  async getAllTasks(id) {
+    return await TasksRepo.getAllTasks(id);
   }
 
-  createTask(data) {
-    return new Promise(res => {
-      fs.writeFile(
-        path.join(__dirname, '../../data/', 'taskData.json'),
-        JSON.stringify(data),
-        err => {
-          if (err) return res(false);
-
-          return res(data);
-        }
-      );
-    });
+  async createTask(data) {
+    return await TasksRepo.createTask(data);
   }
 
-  updateTask(data) {
-    return new Promise(res => {
-      fs.writeFile(
-        path.join(__dirname, '../../data/', 'taskData.json'),
-        JSON.stringify(data),
-        err => {
-          if (err) return res(false);
-
-          return res(data);
-        }
-      );
-    });
+  async updateTask(data, id) {
+    return await TasksRepo.updateTask(data, id);
   }
 
-  deleteTask(data) {
-    return new Promise(res => {
-      fs.writeFile(
-        path.join(__dirname, '../../data/', 'taskData.json'),
-        JSON.stringify(data),
-        err => {
-          if (err) return res(false);
-
-          return res(data);
-        }
-      );
-    });
+  async deleteTask(id) {
+    return await TasksRepo.deleteTask(id);
   }
 }
 

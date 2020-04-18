@@ -1,61 +1,20 @@
-const fs = require('fs');
-const path = require('path');
+const BoardsRepo = require('./board.db.repository');
 
 class BoardsService {
-  getAllBoards() {
-    return new Promise(res => {
-      fs.readFile(
-        path.join(__dirname, '../../data/', 'boardData.json'),
-        (err, data) => {
-          if (err) {
-            return res(false);
-          }
-          return res(JSON.parse(data));
-        }
-      );
-    });
+  async getAllBoards() {
+    return await BoardsRepo.getAllBoards();
   }
 
-  createBoard(data) {
-    return new Promise(res => {
-      fs.writeFile(
-        path.join(__dirname, '../../data/', 'boardData.json'),
-        JSON.stringify(data),
-        err => {
-          if (err) return res(false);
-
-          return res(data);
-        }
-      );
-    });
+  async createBoard(data) {
+    return await BoardsRepo.createBoard(data);
   }
 
-  updateBoard(data) {
-    return new Promise(res => {
-      fs.writeFile(
-        path.join(__dirname, '../../data/', 'boardData.json'),
-        JSON.stringify(data),
-        err => {
-          if (err) return res(false);
-
-          return res(data);
-        }
-      );
-    });
+  async updateBoard(data,id) {
+    return await BoardsRepo.updateBoard(data,id);
   }
 
-  deleteBoard(data) {
-    return new Promise(res => {
-      fs.writeFile(
-        path.join(__dirname, '../../data/', 'boardData.json'),
-        JSON.stringify(data),
-        err => {
-          if (err) return res(false);
-
-          return res(data);
-        }
-      );
-    });
+  async deleteBoard(id) {
+    return await BoardsRepo.deleteBoard(id);
   }
 }
 

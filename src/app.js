@@ -34,7 +34,7 @@ app.use(middleware);
 
 app.use('/users', userRouter);
 app.use('/boards', boardRouter);
-app.use('/boards', taskRouter);
+app.use('/boards/:boardId/tasks', taskRouter);
 
 app.use('*', (req, res, next) => {
   const err = new Error('Route was not found');
