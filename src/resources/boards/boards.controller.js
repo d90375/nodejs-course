@@ -58,30 +58,25 @@ class BoardsController {
       if (!currBoard) {
         ErrorHandler(req, res, next, NOT_FOUND, 'Board not found.');
       }
-      const boardToUpdate = { ...req.body, id: id };
-      const result = await BoardsService.updateBoard(boardToUpdate, id);
-      console.log(req.body)
-      console.log(result)
+      const boardToUpdate = { ...req.body, _id: id };
+      const result = await BoardsService.updateBoard(boardToUpdate);
       if (result) return res.status(OK).json(Board.toResponse(result));
       ErrorHandler(
         req,
         res,
         next,
         INTERNAL_SERVER_ERROR,
-        'Unable update task.'
+        'Unable update board.'
       );
     }
-
     ErrorHandler(req, res, next, BAD_REQUEST, getStatusText(BAD_REQUEST));
   }
 
   async deleteBoard(req, res, next) {
     const { id } = req.params;
     if (id) {
-      // const newTasks = req.tasks.filter(task => id !== task.boardId);
       const currBoard = req.boards.find(board => id === board.id);
       if (currBoard) {
-        // await TasksService.deleteTask(newTasks);
         const result = await BoardsService.deleteBoard(id);
         if (result) return res.status(NO_CONTENT).json(result);
         ErrorHandler(

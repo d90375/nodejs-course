@@ -58,7 +58,6 @@ describe('Users suite', () => {
         });
 
       // Test:
-      console.log('x')
       const userResponse = await request
         .get(routes.users.getById(userId))
         .set('Accept', 'application/json')

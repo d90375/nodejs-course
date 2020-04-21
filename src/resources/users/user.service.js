@@ -1,4 +1,5 @@
 const UserRepo = require('./user.db.repository');
+const TasksService = require('../tasks/tasks.service');
 
 class UsersService {
   async getAllUsers() {
@@ -14,6 +15,7 @@ class UsersService {
   }
 
   async deleteUser(id) {
+    await TasksService.nullUserById(id);
     return await UserRepo.deleteUser(id);
   }
 }

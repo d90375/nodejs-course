@@ -9,9 +9,8 @@ class BoardsRepo {
     return Board.create(data);
   }
 
-  async updateBoard(boardToUpdate, id) {
-    await Board.findByIdAndUpdate(id, boardToUpdate);
-    return Board.findById(id,boardToUpdate)
+  async updateBoard(boardToUpdate) {
+   return  await Board.updateOne({ _id: boardToUpdate.id }, boardToUpdate);
   }
 
   async deleteBoard(id) {

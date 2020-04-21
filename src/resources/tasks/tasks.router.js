@@ -8,8 +8,8 @@ const ErrorHandler = require('../../common/ErrorHandler');
 const { INTERNAL_SERVER_ERROR, getStatusText } = require('http-status-codes');
 
 router.use(async (req, res, next) => {
-  const { boardId } = req.params;
-  console.log(req)
+  const boardOriginalUrl = req.originalUrl.split('/');
+  const boardId = boardOriginalUrl[2];
   const taskData = await TasksService.getAllTasks(boardId);
   const userData = await UsersService.getAllUsers();
   const boardData = await BoardsService.getAllBoards();
@@ -30,12 +30,12 @@ router.use(async (req, res, next) => {
 });
 
 router
-  .route('/')
+  .route('/:boardId/tasks')
   .get(catchError(TasksController.getAllTasks))
   .post(catchError(TasksController.createTask));
 
 router
-  .route('/:taskId')
+  .route('/:boardId/tasks/:taskId')
   .get(catchError(TasksController.getTask))
   .put(catchError(TasksController.updateTask))
   .delete(catchError(TasksController.deleteTask));

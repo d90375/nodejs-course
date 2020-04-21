@@ -16,6 +16,14 @@ class TasksService {
   async deleteTask(id) {
     return await TasksRepo.deleteTask(id);
   }
+
+  async deleteByBoardId(id) {
+    return await TasksRepo.deleteByBoardId(id);
+  }
+
+  async nullUserById(id) {
+    return await TasksRepo.nullUserById(id);
+  }
 }
 
 module.exports = new TasksService();

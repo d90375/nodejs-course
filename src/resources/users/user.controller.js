@@ -74,12 +74,6 @@ class UsersController {
     if (id) {
       const currUser = req.users.find(user => id === user.id);
       if (currUser) {
-        // req.tasks.forEach(task => {
-        //   if (id === task.userId) {
-        //     task.userId = null;
-        //   }
-        // });
-        // await TasksRepo.deleteTask(req.tasks);
         const result = await UserService.deleteUser(id);
         if (result) return res.status(NO_CONTENT).json(User.toResponse(result));
         ErrorHandler(

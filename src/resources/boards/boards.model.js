@@ -1,18 +1,6 @@
 const mongoose = require('mongoose');
 const uuid = require('uuid');
 
-const columnSchema = new mongoose.Schema(
-  {
-    _id: {
-      type: String,
-      default: uuid
-    },
-    title: String,
-    order: Number
-  },
-  { versionKey: false }
-);
-
 const boardSchema = new mongoose.Schema(
   {
     _id: {
@@ -20,23 +8,17 @@ const boardSchema = new mongoose.Schema(
       default: uuid
     },
     title: String,
-    columns: [columnSchema]
+    columns: [
+      { by: mongoose.Schema.Types.ObjectId, title: String, order: Number }
+    ],
+    default: []
   },
   { versionKey: false }
 );
 
-columnSchema.statics.toResponse = column => {
-  const { id, title, order } = column;
-  return { id, title, order };
-};
-
-const Column = mongoose.model('Column', columnSchema);
-
 boardSchema.statics.toResponse = board => {
   const { id, title, columns } = board;
-  const columnsToResponse = columns.map(Column.toResponse);
-
-  return { id: id, title, columns: columnsToResponse };
+  return { id, title, columns };
 };
 
 const Board = mongoose.model('Board', boardSchema);

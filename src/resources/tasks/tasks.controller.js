@@ -12,9 +12,6 @@ const {
 
 class TasksController {
   async getAllTasks(req, res, next) {
-    console.log(req.params.boardId)
-    const { boardId } = req.params;
-    console.log(boardId)
     if (!req.tasks) {
       ErrorHandler(req, res, next, NOT_FOUND, 'Tasks not found.');
     }
@@ -27,9 +24,8 @@ class TasksController {
       const currTask = req.tasks.find(
         task => taskId === task.id && boardId === task.boardId
       );
-      console.log(currTask);
       if (currTask) {
-        return res.status(OK).json(currTask);
+        return res.status(OK).json(Task.toResponse(currTask));
       }
       ErrorHandler(req, res, next, NOT_FOUND, 'Tasks not found.');
     }
@@ -37,7 +33,7 @@ class TasksController {
 
   async createTask(req, res, next) {
     const { boardId } = req.params;
-    if (req.body) {
+    if (req.body.constructor === Object && Object.keys(req.body).length !== 0) {
       const { title, order, description } = req.body;
       let { userId, columnId } = req.body;
       const col = req.tasks.filter(task => columnId === task.columnId);
@@ -48,7 +44,6 @@ class TasksController {
       if (user.length <= 0) {
         userId = null;
       }
-
       const newTask = new Task({
         title,
         description,
@@ -57,9 +52,8 @@ class TasksController {
         boardId,
         columnId
       });
-      req.tasks.push(newTask);
-      const result = await TasksRepo.createTask(req.tasks);
-      if (result) return res.status(OK).json(newTask);
+      const result = await TasksService.createTask(newTask);
+      if (result) return res.status(OK).json(Task.toResponse(result));
       ErrorHandler(
         req,
         res,
@@ -73,31 +67,24 @@ class TasksController {
 
   async updateTask(req, res, next) {
     const { boardId, taskId } = req.params;
-    if (req.body && boardId && taskId) {
-      let updatedTask = {};
-      const updatedArray = req.tasks.map(task => {
-        const { id, title, order, description, userId, columnId } = task;
-        if (id === taskId) {
-          updatedTask = {
-            ...updatedTask,
-            id,
-            title: req.body.title ? req.body.title : title,
-            order: req.body.order ? req.body.order : order,
-            description: req.body.description
-              ? req.body.description
-              : description,
-            userId: req.body.userId ? req.body.userId : userId,
-            boardId: req.body.boardId ? req.body.boardId : boardId,
-            columnId: req.body.columnId ? req.body.columnId : columnId
-          };
-          return updatedTask;
-        }
-        return task;
+    if (
+      req.body.constructor === Object &&
+      Object.keys(req.body).length !== 0 &&
+      boardId &&
+      taskId
+    ) {
+      const { boardId, title, order, description, userId, columnId } = req.body;
+      const result = await TasksService.updateTask({
+        boardId,
+        taskId,
+        title,
+        order,
+        description,
+        userId,
+        columnId
       });
+      if (result) return res.status(OK).json(Task.toResponse(result));
 
-      const result = await TasksRepo.updateTask(updatedArray);
-
-      if (result) return res.status(OK).json(updatedTask);
       ErrorHandler(
         req,
         res,
@@ -114,9 +101,9 @@ class TasksController {
     if (taskId) {
       const currUser = req.tasks.find(task => taskId === task.id);
       if (currUser) {
-        const delList = req.tasks.filter(task => taskId !== task.id);
-        const result = await TasksRepo.deleteTask(delList);
-        if (result) return res.status(NO_CONTENT).json(result);
+
+        const result = await TasksService.deleteTask(taskId);
+        if (result) return res.status(NO_CONTENT).json(Task.toResponse(result));
         ErrorHandler(
           req,
           res,
