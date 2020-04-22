@@ -8,6 +8,7 @@ const {
   getStatusText
 } = require('http-status-codes');
 
+// const loginRouter = require('./resources/login/login.router');
 const userRouter = require('./resources/users/user.router');
 const taskRouter = require('./resources/tasks/tasks.router');
 const boardRouter = require('./resources/boards/boards.router');
@@ -32,9 +33,11 @@ app.use('/', (req, res, next) => {
 
 app.use(middleware);
 
+// app.use('/login', loginRouter);
 app.use('/users', userRouter);
 app.use('/boards', boardRouter);
 app.use('/boards', taskRouter);
+
 
 app.use('*', (req, res, next) => {
   const err = new Error('Route was not found');

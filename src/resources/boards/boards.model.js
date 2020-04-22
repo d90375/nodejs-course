@@ -8,9 +8,11 @@ const boardSchema = new mongoose.Schema(
       default: uuid
     },
     title: String,
-    columns: [
-      { by: mongoose.Schema.Types.ObjectId, title: String, order: Number }
-    ],
+    columns: {
+      type: [
+        { title: String, order: Number, by: mongoose.Schema.Types.ObjectId }
+      ],
+    },
     default: []
   },
   { versionKey: false }
