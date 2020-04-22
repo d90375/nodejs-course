@@ -36,4 +36,5 @@ router
   .put(catchError(UserController.updateUser))
   .delete(catchError(UserController.deleteUser));
 
+
 module.exports = router;

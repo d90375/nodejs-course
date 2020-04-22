@@ -1,12 +1,18 @@
 const UserRepo = require('./user.db.repository');
 const TasksService = require('../tasks/tasks.service');
 
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 class UsersService {
   async getAllUsers() {
     return await UserRepo.getAllUsers();
   }
 
   async createUser(data) {
+    const { password } = data;
+    const hashPassword = await bcrypt.hash(password, saltRounds);
+    data = { ...data, password: hashPassword };
     return await UserRepo.createUser(data);
   }
 
