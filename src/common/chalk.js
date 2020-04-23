@@ -9,7 +9,7 @@ const fillRed = text => {
 };
 
 const fillYellow = text => {
-  return chalk.white.bgYellow.bold(text);
+  return chalk.black.bgYellow.bold(text);
 };
 
 const fillBlue = text => {
