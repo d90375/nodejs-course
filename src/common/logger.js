@@ -1,6 +1,5 @@
 const path = require('path');
 const { createLogger, format, transports } = require('winston');
-const { combine, timestamp, errors, json, uncolorize } = format;
 
 const errorPath = path.join(__dirname, '../../logs/', 'error.log');
 const infoPath = path.join(__dirname, '../../logs/', 'info.log');

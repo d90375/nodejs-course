@@ -3,14 +3,21 @@ const app = require('./app');
 const { fillGreen } = require('./common/chalk');
 const logger = require('./common/logger');
 const { connectToDB } = require('./db/db.client');
+const { generateDB } = require('./mock/createrDB');
 
 const exit = process.exit;
 
-connectToDB(() => {
-  app.listen(PORT, () =>
-    console.log(fillGreen(`App is running on http://localhost:${PORT}`))
-  );
-});
+const isGenerated = generateDB();
+
+setTimeout(() => {
+  if (isGenerated) {
+    connectToDB(() => {
+      app.listen(PORT, () =>
+        console.log(fillGreen(`App is running on http://localhost:${PORT}`))
+      );
+    });
+  }
+}, 1000);
 
 // TODO: uncomment if u need test UncaughtException / UnhandledRejection
 

@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema(
     password: { type: String, required: true },
     _id: {
       type: String,
-      default: uuid()
+      default: uuid
     }
   },
   { versionKey: false }

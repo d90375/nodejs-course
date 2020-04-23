@@ -2,9 +2,10 @@ const logger = require('../common/logger');
 const { finished } = require('stream');
 const { fillGreen, fillYellow } = require('../common/chalk');
 
-const middleware = (req, res, next) => {
+const logHandler = (req, res, next) => {
   const start = Date.now();
   const { originalUrl, method, query, body, params } = req;
+
   logger.info(
     `request method: ${method}; request URL: ${originalUrl}; query: ${JSON.stringify(
       query
@@ -32,4 +33,4 @@ const middleware = (req, res, next) => {
   });
 };
 
-module.exports = middleware;
+module.exports = logHandler;

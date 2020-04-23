@@ -1,6 +1,6 @@
 const BoardsService = require('./boards.service');
 const TasksService = require('../tasks/tasks.service');
-const ErrorHandler = require('../../common/ErrorHandler');
+const ErrorHandler = require('../../middleware/ErrorHandler');
 const Board = require('./boards.model');
 const {
   BAD_REQUEST,

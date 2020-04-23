@@ -3,8 +3,8 @@ const router = express.Router();
 const UserController = require('./user.controller');
 const UserService = require('./user.service');
 const TasksService = require('../tasks/tasks.service');
-const catchError = require('../../common/catchError');
-const ErrorHandler = require('../../common/ErrorHandler');
+const catchError = require('../../middleware/catchError');
+const ErrorHandler = require('../../middleware/ErrorHandler');
 const { INTERNAL_SERVER_ERROR, getStatusText } = require('http-status-codes');
 
 router.use(async (req, res, next) => {

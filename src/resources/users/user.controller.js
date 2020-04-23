@@ -2,7 +2,7 @@ const UsersRepo = require('./user.db.repository');
 const UserService = require('./user.service');
 // const TasksRepo = require('../tasks/task.memory.repository');
 const User = require('./user.model');
-const ErrorHandler = require('../../common/ErrorHandler');
+const ErrorHandler = require('../../middleware/ErrorHandler');
 const {
   BAD_REQUEST,
   NOT_FOUND,

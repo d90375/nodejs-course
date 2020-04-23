@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const UsersService = require('../users/user.service');
 const LoginController = require('./login.controller');
-const catchError = require('../../common/catchError');
-const ErrorHandler = require('../../common/ErrorHandler');
+const catchError = require('../../middleware/catchError');
+const ErrorHandler = require('../../middleware/ErrorHandler');
 const { INTERNAL_SERVER_ERROR } = require('http-status-codes');
 
 router.use(async (req, res, next) => {

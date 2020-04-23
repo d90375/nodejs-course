@@ -1,6 +1,6 @@
 const TasksService = require('./tasks.service');
 const Task = require('./tasks.model');
-const ErrorHandler = require('../../common/ErrorHandler');
+const ErrorHandler = require('../../middleware/ErrorHandler');
 const {
   BAD_REQUEST,
   NOT_FOUND,
