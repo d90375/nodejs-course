@@ -10,10 +10,10 @@ class UsersService {
   }
 
   async createUser(data) {
-    const { password } = data;
-    const salt = await bcrypt.genSalt(saltRounds);
-    const hashPassword = await bcrypt.hash(password, salt);
-    data = { ...data, password: hashPassword };
+    // const { password } = data;
+    // const salt = await bcrypt.genSalt(saltRounds);
+    // const hashPassword = await bcrypt.hash(password, salt);
+    // data = { ...data, password: hashPassword };
     return await UserRepo.createUser(data);
   }
 

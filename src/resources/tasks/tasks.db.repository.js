@@ -22,7 +22,7 @@ class TasksRepo {
   }
 
   async nullUserById(userId) {
-    return Task.findOneAndUpdate(
+    return Task.updateMany(
       { userId },
       { userId: null },
       { new: true, useFindAndModify: false },

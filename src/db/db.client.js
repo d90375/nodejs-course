@@ -16,7 +16,7 @@ const boards = boardsJSON.map(board => new Board(board));
 const tasks = tasksJSON.map(task => new Task(task));
 
 const connectToDB = queueCb => {
-  const mongoose = require('mongoose');
+
   mongoose.connect(MONGO_CONNECTION_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true

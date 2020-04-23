@@ -6,7 +6,7 @@ const saltRounds = 10;
 
 const userSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
+    name: { type: String },
     login: { type: String, required: true, createIndexes: { unique: true } },
     password: { type: String, required: true },
     _id: {
@@ -29,10 +29,12 @@ userSchema.pre('save', async function save(next) {
   }
 });
 
-userSchema.methods.validatePassword = async function validatePassword(data) {
-  const user = this;
-  return bcrypt.compare(data, user.password);
-};
+
+
+// userSchema.methods.validatePassword = async function validatePassword(data) {
+//   const user = this;
+//   return bcrypt.compare(data, user.password);
+// };
 
 userSchema.statics.toResponse = user => {
   const { id, name, login } = user;
