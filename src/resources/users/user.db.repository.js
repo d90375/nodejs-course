@@ -10,7 +10,7 @@ class UsersRepo {
   }
 
   async updateUser(userToUpdate) {
-    return await User.updateOne({ _id: userToUpdate.id }, userToUpdate);
+    return User.findOneAndUpdate(userToUpdate.id, userToUpdate, { new: true });
   }
 
   async deleteUser(id) {
