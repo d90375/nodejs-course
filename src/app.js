@@ -35,10 +35,10 @@ app.use(infoLogger);
 
 app.use('/login', loginRouter);
 app.use('/users', authentication, userRouter);
-app.use('/boards', authentication ,  boardRouter);
-app.use('/boards', authentication ,  taskRouter);
+app.use('/boards', authentication, boardRouter);
+app.use('/boards', authentication, taskRouter);
 
-app.use('*', (req, res, next) => {
+app.use('*', authentication, (req, res, next) => {
   const err = new Error('Route was not found');
   console.log(fillRed('Route was not found'));
   err.status = NOT_FOUND;

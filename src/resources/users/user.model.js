@@ -29,12 +29,16 @@ userSchema.pre('save', async function save(next) {
   }
 });
 
-
-
-// userSchema.methods.validatePassword = async function validatePassword(data) {
-//   const user = this;
-//   return bcrypt.compare(data, user.password);
-// };
+userSchema.pre('findOneAndUpdate', async function preUpdate(next) {
+  const user = this;
+  try {
+    const salt = await bcrypt.genSalt(saltRounds);
+    user._update.password = await bcrypt.hash(user._update.password, salt);
+    return next();
+  } catch (err) {
+    return next(err);
+  }
+});
 
 userSchema.statics.toResponse = user => {
   const { id, name, login } = user;
